@@ -1,6 +1,6 @@
 {
   "name": "@mu5h3r/uikit",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "license": "BSD-3-Clause",
   "private": false,
   "files": [
@@ -10,5 +10,5 @@
   "scripts": {
     "publish": "npm publish --registry http://registry.npmjs.org"
   },
-  "gitHead": "5a96ed6a5e9bb9d1e3ec6989973316215ba9b4a2"
+  "gitHead": "afb44a4e9d5e743f8e356ff560890e9bc82d8827"
 }
