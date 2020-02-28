@@ -1,0 +1,53 @@
+@import '../../../theme/theme';
+@import 'form/button/style/button';
+
+html, body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+}
+
+#root, #example {
+  flex-wrap: nowrap;
+  overflow: hidden;
+  height: 100%;
+}
+
+#example > .column {
+  flex: 1 1 auto;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.label__red {
+  color: #ffffff;
+  background-color: #ff5733;
+}
+
+.label__blue {
+  color: #ffffff;
+  background-color: #3498db;
+}
+
+.example-button-group > * {
+  margin-right: 15px;
+}
+
+.button-contained-red {
+  @include rui-button-contained-color(red);
+}
+
+.button-outlined-red {
+  @include rui-button-outlined-color(red);
+}
+
+.app-bar .button-contained {
+  margin: 6px 0;
+}
+

@@ -1,0 +1,23 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+  min-height: 0;
+  min-width: 0;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+  min-height: 0;
+  min-width: 0;
+}
+
+.wrappable {
+  flex-wrap: wrap;
+}

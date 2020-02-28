@@ -1,0 +1,55 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+
+input {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+}
+
+/*------------------------------------------------ Header ------------------------------------------------------------*/
+
+i.succeed {
+    color: mediumseagreen;
+    font-weight: bold;
+    font-style: normal;
+}
+
+i.warning {
+    color: #F08080;
+    font-weight: bold;
+    font-style: normal;
+}
+
+div.warning {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    height: 20px;
+    background-color: #444;
+    color: #fff;
+    border-radius: 3px;
+    padding: 4px 8px;
+    margin-right: 10px;
+}
+
+div.warning__title {
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
+
+div.warning__body {
+    font-size: 2em;
+    margin-left: 0.2em;
+}
+
+div.warning .loader {
+    font-size: 12pt;
+}
+
+div.warning .loader .loader__circle > div {
+    background-color: #fff;
+}

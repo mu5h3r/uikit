@@ -1,0 +1,53 @@
+{
+  "name": "@mu5h3r/uikit-react",
+  "version": "0.109.0",
+  "license": "BSD-3-Clause",
+  "private": false,
+  "dependencies": {
+    "@babel/runtime": "^7.6.2",
+    "moment": "^2.24.0",
+    "node-sass": "^4.13.1",
+    "react": "^16.10.1",
+    "react-datetime": "^2.16.3"
+  },
+  "scripts": {
+    "start": "cross-env SASS_PATH=node_modules:src react-scripts start",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "build": "babel src/core --out-dir core --copy-files && babel src/grid --out-dir grid --copy-files && babel src/form --out-dir form --copy-files && babel src/theme --out-dir theme --copy-files",
+    "publish": "npm publish --registry http://registry.npmjs.org"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.2",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-export-default-from": "^7.8.3",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "cross-env": "^7.0.0",
+    "flow": "^0.2.3",
+    "react-dom": "^16.10.1",
+    "react-scripts": "3.1.2"
+  },
+  "files": [
+    "/core/**/*",
+    "/grid/**/*",
+    "/form/**/*",
+    "/theme/**/*"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "@mu5h3r/uikit-css",
+  "version": "0.1.0",
+  "license": "BSD-3-Clause",
+  "private": false,
+  "files": [
+    "/**/*.scss"
+  ]
+}

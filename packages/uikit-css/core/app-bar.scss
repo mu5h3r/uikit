@@ -1,0 +1,19 @@
+@import '../theme/theme';
+
+.app-bar {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: $color_primary;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 10%);
+    min-height: 30px;
+    padding: 0 8px;
+    z-index: 1;
+}
+
+.app-bar > .group {
+    display: flex;
+    flex-direction: row;
+}
+

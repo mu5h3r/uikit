@@ -1,0 +1,20 @@
+.help {
+  display: flex;
+  justify-content: center;
+  cursor: help;
+  font-size: 12px;
+  font-weight: bold;
+
+  width: 1.2em;
+  height: 1.2em;
+  line-height: 1.2em;
+  padding: 0.2em;
+  border-radius: 1em;
+
+  background-color: #efefef;
+}
+
+.help > .tooltip {
+  font-weight: normal;
+  text-transform: none;
+}

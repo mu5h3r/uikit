@@ -1,0 +1,17 @@
+@import '../theme/theme';
+
+.panel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  background-color: $color_tertiary;
+  border-bottom: solid 1px #eee;
+  padding: 4px;
+}
+
+.panel > * {
+  margin-left: 5px;
+  margin-right: 5px;
+}
