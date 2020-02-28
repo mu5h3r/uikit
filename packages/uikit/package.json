@@ -1,6 +1,6 @@
 {
   "name": "@mu5h3r/uikit",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "license": "BSD-3-Clause",
   "private": false,
   "publishConfig": {
@@ -10,8 +10,6 @@
     "/**/*.scss",
     "/core/fonts/*"
   ],
-  "scripts": {
-    "publish": "npm publish --registry http://registry.npmjs.org"
-  },
-  "gitHead": "7af8daa02b45773b8fac54044e7f54053497d4d0"
+  "scripts": {},
+  "gitHead": "49a0cbbd175a38a38febe5c703a90d0382d83a3f"
 }

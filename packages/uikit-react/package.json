@@ -1,6 +1,6 @@
 {
   "name": "@mu5h3r/uikit-react",
-  "version": "0.111.11",
+  "version": "0.111.12",
   "license": "BSD-3-Clause",
   "private": false,
   "publishConfig": {
@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",
-    "@mu5h3r/uikit": "^0.1.12",
+    "@mu5h3r/uikit": "^0.1.13",
     "moment": "^2.24.0",
     "node-sass": "^4.13.1",
     "react": "^16.10.1",
@@ -18,8 +18,7 @@
     "start": "cross-env SASS_PATH=node_modules:src react-scripts start",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build": "babel --delete-dir-on-start src/core --out-dir core --copy-files && babel --delete-dir-on-start src/grid --out-dir grid --copy-files && babel --delete-dir-on-start src/form --out-dir form --copy-files",
-    "publish": "npm publish --registry http://registry.npmjs.org"
+    "build": "babel --delete-dir-on-start src/core --out-dir core --copy-files && babel --delete-dir-on-start src/grid --out-dir grid --copy-files && babel --delete-dir-on-start src/form --out-dir form --copy-files"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -54,5 +53,5 @@
     "/form/**/*",
     "/theme/**/*"
   ],
-  "gitHead": "7af8daa02b45773b8fac54044e7f54053497d4d0"
+  "gitHead": "49a0cbbd175a38a38febe5c703a90d0382d83a3f"
 }
