@@ -1,5 +1,7 @@
-@import '../../../theme/theme';
-@import 'form/button/style/button';
+@import '~@mu5h3r/uikit/core/base';
+@import '~@mu5h3r/uikit/grid';
+@import '~@mu5h3r/uikit/theme/theme';
+@import '~@mu5h3r/uikit/form/button';
 
 html, body {
   margin: 0;

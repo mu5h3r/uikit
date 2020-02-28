@@ -1,10 +1,11 @@
 {
   "name": "@mu5h3r/uikit-react",
-  "version": "0.109.0",
+  "version": "0.110.0",
   "license": "BSD-3-Clause",
   "private": false,
   "dependencies": {
     "@babel/runtime": "^7.6.2",
+    "@mu5h3r/uikit": "^0.1.0",
     "moment": "^2.24.0",
     "node-sass": "^4.13.1",
     "react": "^16.10.1",
@@ -14,7 +15,7 @@
     "start": "cross-env SASS_PATH=node_modules:src react-scripts start",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build": "babel src/core --out-dir core --copy-files && babel src/grid --out-dir grid --copy-files && babel src/form --out-dir form --copy-files && babel src/theme --out-dir theme --copy-files",
+    "build": "babel --delete-dir-on-start src/core --out-dir core --copy-files && babel --delete-dir-on-start src/grid --out-dir grid --copy-files && babel --delete-dir-on-start src/form --out-dir form --copy-files",
     "publish": "npm publish --registry http://registry.npmjs.org"
   },
   "eslintConfig": {

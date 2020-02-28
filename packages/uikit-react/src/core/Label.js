@@ -1,16 +1,16 @@
 import React from 'react';
-import './style/label.css';
+import '@mu5h3r/uikit/core/label.scss';
 
 type Props = {
-    children: string,
-    className?: string,
-    backgroundColor?: string,
-    size?: 'small' | 'normal'
+  children: string,
+  className?: string,
+  backgroundColor?: string,
+  size?: 'small' | 'normal'
 }
 
 export default function Label(props: Props) {
-    let classes = "label";
-    if (props.className)
-        classes = `${classes} ${props.className}`;
-    return <div className={classes} data-content={props.children}>{props.children}</div>
+  let classes = "label";
+  if (props.className)
+    classes = `${classes} ${props.className}`;
+  return <div className={classes} data-content={props.children}>{props.children}</div>
 }

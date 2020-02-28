@@ -1,20 +1,20 @@
 import React from 'react';
 
-import './style/app-bar.scss';
+import '@mu5h3r/uikit/core/app-bar.scss';
 
 type Props = {
-    inline?: boolean
+  inline?: boolean
 }
 
 export default class AppBar extends React.Component<Props> {
-    render() {
-        const { inline } = this.props;
+  render() {
+    const {inline} = this.props;
 
-        let classes = ['app-bar'];
-        classes.push(inline ? 'row' : 'column');
+    let classes = ['app-bar'];
+    classes.push(inline ? 'row' : 'column');
 
-        return <div className={classes.join(' ')}>
-            { this.props.children }
-        </div>;
-    }
+    return <div className={classes.join(' ')}>
+      {this.props.children}
+    </div>;
+  }
 }

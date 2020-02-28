@@ -4,6 +4,10 @@
   "license": "BSD-3-Clause",
   "private": false,
   "files": [
-    "/**/*.scss"
-  ]
+    "/**/*.scss",
+    "/core/fonts/*"
+  ],
+  "scripts": {
+    "publish": "npm publish --registry http://registry.npmjs.org"
+  }
 }

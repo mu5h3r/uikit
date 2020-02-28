@@ -1,8 +1,5 @@
 import React, {useState} from 'react';
 
-import './core/style/base.css';
-import './grid/style/grid.scss';
-
 import AppBar from './core/AppBar';
 import Group from './core/Group';
 import Button from './form/button/Button';

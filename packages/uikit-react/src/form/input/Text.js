@@ -1,7 +1,7 @@
 import React from 'react';
 import Base from './Base.js';
 
-import './style/text.scss';
+import '@mu5h3r/uikit/form/input/text.scss';
 
 type Props = {
     type ?: string,

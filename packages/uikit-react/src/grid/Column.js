@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './style/grid.scss';
+import '@mu5h3r/uikit/grid.scss';
 
 export default function Column(props) {
     const { className, ...customProps } = props;

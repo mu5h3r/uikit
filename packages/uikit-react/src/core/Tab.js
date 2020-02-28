@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '../form';
 
-import './style/tab.scss';
+import '@mu5h3r/uikit/core/tab.scss';
 
 type Props = {
   children: any
