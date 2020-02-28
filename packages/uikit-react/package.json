@@ -1,11 +1,11 @@
 {
   "name": "@mu5h3r/uikit-react",
-  "version": "0.111.0",
+  "version": "0.111.1",
   "license": "BSD-3-Clause",
   "private": false,
   "dependencies": {
     "@babel/runtime": "^7.6.2",
-    "@mu5h3r/uikit": "^0.1.1",
+    "@mu5h3r/uikit": "^0.1.2",
     "moment": "^2.24.0",
     "node-sass": "^4.13.1",
     "react": "^16.10.1",
