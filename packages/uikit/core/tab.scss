@@ -31,10 +31,15 @@
 }
 
 .app-bar .button-tab {
-  min-height: 100%;
-  max-height: 100%;
-  line-height: 100%;
+  flex-grow: 0;
+  flex-shrink: 0;
   vertical-align: center;
-  justify-content: center;
+  align-self: flex-end;
+  min-height: 0;
+}
+
+.app-bar .group > .button-tab {
+  margin-left: 2px;
+  margin-right: 2px;
 }
 
