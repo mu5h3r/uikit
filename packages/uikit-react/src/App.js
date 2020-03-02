@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 import AppBar from './core/AppBar';
 import Group from './core/Group';
-import Button from './form/button/Button';
+import Button from './form/Button';
 import Loader from './core/Loader';
 import Row from './grid/Row';
 import Column from './grid/Column';
