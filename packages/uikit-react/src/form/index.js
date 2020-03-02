@@ -1,2 +1,2 @@
-import Button from './button/Button';
+import Button from './Button';
 export {Button};

@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from "../../core/Modal";
-import Button from "../button/Button";
+import Button from "../Button";
 import Base from './Base.js';
 
 import '@mu5h3r/uikit/form/input/select.scss';
