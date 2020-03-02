@@ -31,7 +31,6 @@ export default class Text extends React.Component<Props> {
 
         return <Base className={classes} onClick={onClick}>
             { prefix ? <div className="input-text__prefix">{prefix}</div> : null }
-
             <input type={type || 'text'}
                    readOnly={readOnly}
                    value={value || ''}
@@ -39,10 +38,8 @@ export default class Text extends React.Component<Props> {
                    onFocus={this.toggleFocus}
                    onBlur={this.toggleFocus}
             />
-
-            { suffix ? <div className="input-text__suffix">{suffix}</div> : null }
-
             { this.props.children }
+            { suffix ? <div className="input-text__suffix">{suffix}</div> : null }
         </Base>
     }
 }

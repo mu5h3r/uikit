@@ -27,6 +27,7 @@ function App() {
   const [button1value, setButton1Value] = useState(null);
   const [button2value, setButton2Value] = useState(null);
   const [password1value, setPassword1Value] = useState(null);
+  const [menuSelected, setMenuSelected] = useState(null);
 
   return <div id="example" className="column">
     <AppBar inline={true}>
@@ -117,8 +118,12 @@ function App() {
       <div style={{width: '100px'}}><Loader>UI</Loader></div>
 
       <h3>Menu</h3>
-      <Menu options={[{name: 'Option 1', value: 1}, {name: 'Option 2', value: 2}, {name: 'Option 3', value: 3}]}
-            onChange={(value, name) => alert(`Selected value "${value}" with name "${name}"`)} />
+      <Group>
+        <Menu selected={menuSelected} 
+              options={[{name: 'Option 1', value: 1}, {name: 'Option 2', value: 2}, {name: 'Option 3', value: 3}]}
+              onChange={(selected) => setMenuSelected(selected)} />
+        <Label>Menu</Label>
+      </Group>
 
       <h2>Inputs</h2>
       <h3>Text</h3>
