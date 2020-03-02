@@ -15,6 +15,7 @@ import Select from './form/input/Select';
 import Icon from './core/Icon';
 import Tab from './core/Tab';
 import Date from './form/input/Date';
+import Menu from './core/Menu';
 
 import './App.scss';
 
@@ -114,6 +115,10 @@ function App() {
 
       <h2>Spinners</h2>
       <div style={{width: '100px'}}><Loader>UI</Loader></div>
+
+      <h3>Menu</h3>
+      <Menu options={[{name: 'Option 1', value: 1}, {name: 'Option 2', value: 2}, {name: 'Option 3', value: 3}]}
+            onChange={(value, name) => alert(`Selected value "${value}" with name "${name}"`)} />
 
       <h2>Inputs</h2>
       <h3>Text</h3>

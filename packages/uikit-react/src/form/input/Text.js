@@ -7,6 +7,7 @@ type Props = {
     type ?: string,
     onClick?: () => void,
     onChange?: () => void,
+    className?: string
 };
 
 export default class Text extends React.Component<Props> {
@@ -20,12 +21,13 @@ export default class Text extends React.Component<Props> {
     };
 
     render() {
-        const { value, readOnly, suffix, prefix, onChange, onClick, type } = this.props;
+        const { value, readOnly, suffix, prefix, onChange, onClick, type, className } = this.props;
 
         let classes = 'input-base input-text';
         if (this.state.focus) classes += ' focus';
         if (!value) classes += ' empty';
         if (suffix || prefix) classes += ' inline';
+        if (className) classes += ` ${className}`;
 
         return <Base className={classes} onClick={onClick}>
             { prefix ? <div className="input-text__prefix">{prefix}</div> : null }
@@ -37,7 +39,10 @@ export default class Text extends React.Component<Props> {
                    onFocus={this.toggleFocus}
                    onBlur={this.toggleFocus}
             />
+
             { suffix ? <div className="input-text__suffix">{suffix}</div> : null }
+
+            { this.props.children }
         </Base>
     }
 }

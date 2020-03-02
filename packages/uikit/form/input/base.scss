@@ -1,21 +1,23 @@
 @import '../../theme/theme';
 
-.input-base {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+@mixin rui-input-color($color) {
   color: #333;
-  display: inline-flex;
-  flex-direction: row;
-  border: solid 1px #b0b0b0;
-  border-radius: 3px;
+  border: solid 1px $color;
   background-color: transparent;
-
-  min-height: 36px;
-  line-height: 36px;
-
-  align-items: center;
 }
 
-.input-base:focus-within {
-  // border-color: #303030;
-  border-color: $color_secondary;
+.input-base {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: inline-flex;
+  flex-direction: row;
+  border-radius: 4px;
+  min-height: 36px;
+  line-height: 36px;
+  align-items: center;
+
+  @include rui-input-color(#b0b0b0);
+
+  &:focus-within {
+    @include rui-input-color($color_secondary);
+  }
 }

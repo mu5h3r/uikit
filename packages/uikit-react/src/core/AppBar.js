@@ -8,10 +8,11 @@ type Props = {
 
 export default class AppBar extends React.Component<Props> {
   render() {
-    const {inline} = this.props;
+    const {inline, className} = this.props;
 
     let classes = ['app-bar'];
-    classes.push(inline ? 'row' : 'column');
+    classes.push(inline === true || inline === undefined ? 'row' : 'column');
+    if (className) classes.push(className);
 
     return <div className={classes.join(' ')}>
       {this.props.children}
