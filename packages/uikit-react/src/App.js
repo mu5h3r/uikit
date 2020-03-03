@@ -122,6 +122,9 @@ function App() {
       <h3>Text</h3>
       <TextInput value={button1value} onChange={setButton1Value}/>
 
+      <h3>Text With Error</h3>
+      <TextInput value={button1value} onChange={setButton1Value} error="Error text"/>
+
       <h3>Text with label</h3>
       <Group>
         <TextInput value={button2value} onChange={setButton2Value}/>

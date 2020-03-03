@@ -2,8 +2,8 @@
 
 .input-text {
   position: relative;
-  margin-top: 0.3em;
-  margin-bottom: 0.3em;
+  margin-top: 16px;
+  margin-bottom: 16px;
   width: 100%;
 }
 
@@ -30,8 +30,15 @@
   padding-left: 8px;
 }
 
-.input-text:focus-within > .input-text__prefix, .input-text:focus-within > .input-text__suffix {
+.input-text:not(.error):focus-within > .input-text__prefix, .input-text:not(.error):focus-within > .input-text__suffix {
   color: $color_secondary;
+}
+
+.input-text__error-text {
+  position: absolute;
+  bottom: -30px;
+  left: 16px;
+  font-size: 0.9em;
 }
 
 .group > .input-text:not(.focus) + .label {
@@ -39,7 +46,7 @@
   z-index: 0;
 }
 
-.group > .input-text + .label {
+.group > .input-text:not(.error) + .label {
   position: absolute;
   background-color: transparent;
   margin: 0;

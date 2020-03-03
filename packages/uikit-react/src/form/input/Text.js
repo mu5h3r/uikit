@@ -1,5 +1,6 @@
 import React from 'react';
 import Base from './Base.js';
+import Icon from '../../core/Icon';
 
 import '@mu5h3r/uikit/form/input/text.scss';
 
@@ -21,13 +22,14 @@ export default class Text extends React.Component<Props> {
     };
 
     render() {
-        const { value, readOnly, suffix, prefix, onChange, onClick, type, className } = this.props;
+        const { value, readOnly, suffix, prefix, error, onChange, onClick, type, className } = this.props;
 
         let classes = 'input-text';
         if (this.state.focus) classes += ' focus';
         if (!value) classes += ' empty';
         if (suffix || prefix) classes += ' inline';
         if (className) classes += ` ${className}`;
+        if (error) classes += ' error';
 
         return <Base className={classes} onClick={onClick}>
             { prefix ? <div className="input-text__prefix">{prefix}</div> : null }
@@ -40,6 +42,13 @@ export default class Text extends React.Component<Props> {
             />
             { this.props.children }
             { suffix ? <div className="input-text__suffix">{suffix}</div> : null }
+            { error ? (
+              <div className="input-text__suffix input-text__error">
+                <Icon name="error" />
+                <div className="input-text__error-text">{error}</div>
+              </div>
+            ): null }
+
         </Base>
     }
 }
