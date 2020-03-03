@@ -130,9 +130,7 @@ function App() {
       <TextInput label="Label" value={button2value} onChange={setButton2Value}/>
 
       <h3>Text with prefix</h3>
-      <Group>
-        <TextInput prefix=<Icon name="face" /> value={button2value} onChange={setButton2Value}/>
-      </Group>
+      <TextInput prefix=<Icon name="face" /> value={button2value} onChange={setButton2Value}/>
 
       <h3>Text with suffix</h3>
       <Group>

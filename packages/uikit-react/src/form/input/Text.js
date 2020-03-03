@@ -24,7 +24,7 @@ export default class Text extends React.Component<Props> {
     };
 
     render() {
-        const { label, value, readOnly, suffix, prefix, error, onChange, onClick, type, className } = this.props;
+        const { label, value, readOnly, suffix, prefix, error, onChange, onClick, type, className, style } = this.props;
 
         let classes = 'input-text';
         if (this.state.focus) classes += ' focus';
@@ -33,7 +33,7 @@ export default class Text extends React.Component<Props> {
         if (className) classes += ` ${className}`;
         if (error) classes += ' error';
 
-        return <Group className={`input-wrapper`}>
+        return <Group style={style} className={`input-wrapper`}>
             <Base className={classes} onClick={onClick}>
                 { prefix ? <div className="input-text__prefix">{prefix}</div> : null }
                 <input type={type || 'text'}
