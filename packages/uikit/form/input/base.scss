@@ -1,9 +1,9 @@
 @import '../../theme/theme';
 
-@mixin rui-input-color($color) {
+@mixin rui-input-color($color, $background_color: transparent) {
   color: #333;
   border: solid 1px $color;
-  background-color: transparent;
+  background-color: $background_color;
 }
 
 .input-base {
