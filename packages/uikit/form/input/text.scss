@@ -32,9 +32,16 @@
   color: $color_secondary;
 }
 
-.group > .input-text:not(.focus) > .label {
+.group > .input-text.empty:not(.focus) > .label {
   z-index: 0;
   font-size: 14px;
+  line-height: 14px;
+}
+
+.group > .input-text:not(.empty):not(.focus) > .label {
+  z-index: 0;
+  font-size: 12px;
+  line-height: 12px;
 }
 
 .group > .input-text.error > .label {
