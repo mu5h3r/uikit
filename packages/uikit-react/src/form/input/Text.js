@@ -19,15 +19,10 @@ export default class Text extends React.Component<Props> {
         empty: true
     };
 
-    toggleFocus = () => {
-        this.setState({ focus: !this.state.focus });
-    };
-
     render() {
         const { label, value, readOnly, suffix, prefix, error, onChange, onClick, type, className, style } = this.props;
 
         let classes = 'input-text';
-        if (this.state.focus) classes += ' focus';
         if (!value) classes += ' empty';
         if (suffix || prefix) classes += ' inline';
         if (className) classes += ` ${className}`;
@@ -39,10 +34,7 @@ export default class Text extends React.Component<Props> {
                 <input type={type || 'text'}
                        readOnly={readOnly}
                        value={value || ''}
-                       onChange={(e) => onChange(e.currentTarget.value)}
-                       onFocus={this.toggleFocus}
-                       onBlur={this.toggleFocus}
-                />
+                       onChange={(e) => onChange(e.currentTarget.value)} />
                 { this.props.children }
                 { suffix ? <div className="input-text__suffix">{suffix}</div> : null }
                 { error ? <div className="input-text__suffix input-text__error"><Icon name="error" /></div>: null }

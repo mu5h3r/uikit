@@ -1,21 +1,52 @@
 @import '../../theme/theme';
 
+.input-wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  flex-grow: 0;
+  flex-shrink: 0;
+  justify-content: flex-start;
+  justify-items: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.input-wrapper > .error-text {
+  position: sticky;
+  font-size: 0.9em;
+  color: #ab1432;
+  margin-top: 2px;
+}
+
 .input-text {
   position: relative;
   width: 100%;
-}
 
-.input-text input[type=text], .input-text input[type=password] {
-  top: 0; left: 0;
-  border: none;
-  height: 100%;
-  width: 100%;
-  line-height: 36px;
-  background: transparent;
-  margin: 0;
-  padding-left: 16px;
-  font-size: 1em;
-  outline: none;
+  & input[type=text], & input[type=password] {
+    top: 0;
+    left: 0;
+    border: none;
+    height: 100%;
+    width: 100%;
+    line-height: 36px;
+    background: transparent;
+    margin: 0;
+    padding-left: 16px;
+    font-size: 1em;
+    outline: none;
+  }
+
+  &:not(.error):focus-within {
+    & > .input-text__prefix, & > .input-text__suffix {
+      color: $color_secondary;
+    }
+
+    & > .label {
+      color: $color_secondary;
+    }
+  }
 }
 
 .input-text__prefix, .input-text__suffix {
@@ -28,17 +59,13 @@
   padding-left: 8px;
 }
 
-.input-text:not(.error):focus-within > .input-text__prefix, .input-text:not(.error):focus-within > .input-text__suffix {
-  color: $color_secondary;
-}
-
-.group > .input-text.empty:not(.focus) > .label {
+.group > .input-text.empty:not(:focus-within) > .label {
   z-index: 0;
   font-size: 14px;
   line-height: 14px;
 }
 
-.group > .input-text:not(.empty):not(.focus) > .label {
+.group > .input-text:not(.empty) > .label {
   z-index: 0;
   font-size: 12px;
   line-height: 12px;
@@ -46,10 +73,6 @@
 
 .group > .input-text.error > .label {
   color: #ab1432;
-}
-
-.group > .input-text:not(.error) > .label {
-  color: $color_secondary;
 }
 
 .group > .input-text > .label {
@@ -80,33 +103,15 @@
   }
 }
 
-.group > .input-text.empty:not(.focus) > .label {
+.group > .input-text.empty:not(:focus-within) > .label {
   top: 50%;
   left: 5px;
   transform: translate(5px, -50%);
   color: #a0a0a0;
+  font-size: 14px;
+  line-height: 14px;
 
   &:after {
     border-color: transparent;
   }
-}
-
-.input-wrapper > .error-text {
-  position: sticky;
-  font-size: 0.9em;
-  color: #ab1432;
-  margin-top: 2px;
-}
-
-.input-wrapper {
-  display: inline-flex;
-  flex-direction: column;
-  flex-grow: 0;
-  flex-shrink: 0;
-  justify-content: flex-start;
-  justify-items: flex-start;
-  align-content: flex-start;
-  align-items: flex-start;
-  margin-top: 16px;
-  margin-bottom: 16px;
 }
