@@ -15,7 +15,6 @@ import Select from './form/input/Select';
 import Icon from './core/Icon';
 import Tab from './core/Tab';
 import Date from './form/input/Date';
-import Menu from './core/Menu';
 
 import './App.scss';
 
@@ -27,7 +26,6 @@ function App() {
   const [button1value, setButton1Value] = useState(null);
   const [button2value, setButton2Value] = useState(null);
   const [password1value, setPassword1Value] = useState(null);
-  const [menuSelected, setMenuSelected] = useState(null);
 
   return <div id="example" className="column">
     <AppBar inline={true}>
@@ -117,14 +115,6 @@ function App() {
       <h2>Spinners</h2>
       <div style={{width: '100px'}}><Loader>UI</Loader></div>
 
-      <h3>Menu</h3>
-      <Group>
-        <Menu selected={menuSelected} 
-              options={[{name: 'Option 1', value: 1}, {name: 'Option 2', value: 2}, {name: 'Option 3', value: 3}]}
-              onChange={(selected) => setMenuSelected(selected)} />
-        <Label>Menu</Label>
-      </Group>
-
       <h2>Inputs</h2>
       <h3>Text</h3>
       <TextInput value={button1value} onChange={setButton1Value}/>
@@ -147,16 +137,17 @@ function App() {
 
       <h3>Select</h3>
       <Group>
+        <Select options={[{name: 'Option 1', value: 1}, {name: 'Option 2', value: 2}, {name: 'Option 3', value: 3}]}
+                onChange={(selected) => console.log('Selected', selected)} />
+        <Label>Select</Label>
+      </Group>
+
+      <h3>Select Multiple</h3>
+      <Group>
         <Select multiple={true}
-                options={[
-                  {'name': 'Option 1', 'value': 'Value 1'},
-                  {'name': 'Option 2', 'value': 'Value 2'},
-                  {'name': 'Option 3', 'value': 'Value 3'},
-                  {'name': 'Option 4', 'value': 'Value 4'},
-                  {'name': 'Option 5', 'value': 'Value 5'}
-                ]}
-                onChange={(values) => { console.log('Select values', values) }} />
-        <Label>Label</Label>
+                options={[{name: 'Option 1', value: 1}, {name: 'Option 2', value: 2}, {name: 'Option 3', value: 3}]}
+                onChange={(selected) => console.log('Selected', selected)} />
+        <Label>Select Multiple</Label>
       </Group>
 
       <h3>Password</h3>

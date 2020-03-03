@@ -1,116 +1,74 @@
-import React from 'react';
-import Modal from "../../core/Modal";
-import Button from "../Button";
-import Base from './Base.js';
+// @flow
+import React, { useState } from 'react';
+import TextField from './Text';
+import Icon from '../../core/Icon';
+import Column from '../../grid/Column';
 
 import '@mu5h3r/uikit/form/input/select.scss';
 
-type Option = {
-  name: string,
-  value: string
+type OptionProps = {
+  children: any,
+  value: any,
+  checkbox?: boolean,
+  checked?: boolean,
+  onClick: () => void
+}
+
+export function Option(props: OptionProps) {
+  const { children, checkbox, checked, value, onClick } = props;
+
+  console.log('Checked', checked, 'Value', value);
+
+  return <div className="input-select__option" onClick={() => onClick(value, children)}>
+    { checkbox ? <input type="checkbox" checked={checked} onChange={() => null} /> : null }
+    { props.children }
+  </div>
 }
 
 type Props = {
+  options: any,
   multiple?: boolean,
-  options: Option[],
-  onChange: (Option) => void
+  onChange: (any) => void
 }
 
-export default class Select extends React.Component<Props> {
-  state = {
-    modal: false,
-    values: []
+export default function Select(props: Props) {
+  const [selected, setSelected] = useState([]);
+  const [valueVersion, setValueVersion] = useState(0);
+  const { multiple, options, onChange } = props;
+
+  const handleChange = (value, name) => {
+    const newValue = {name: name, value: value};
+    let values = selected;
+    if (multiple)  {
+      if (selected.find(item => value === item.value) === undefined) selected.push(newValue);
+      else values = values.filter((item) => item.value !== value);
+    } else values = [newValue];
+    onChange(values);
+    setSelected(values);
+    setValueVersion(valueVersion + 1);
   };
 
-  inputClick = () => {
-    this.setState({modal: true});
-  };
+  const values = selected ? selected.reduce((acc, item) => {
+    if (acc) acc += ', ';
+    acc += item.name;
+    return acc;
+  }, '') : null;
 
-  valueChange = (value) => {
-    const {multiple} = this.props;
-    let {values} = this.state;
-
-    if (multiple) {
-      const index = values.findIndex(item => item.value === value.value);
-      if (index > -1)
-        values.splice(index, 1);
-      else
-        values.push(value);
-    } else {
-      if (values.length > 0 && values[0].value === value.value)
-        values = [];
-      else
-        values = [value];
-    }
-
-    this.setState({values: values});
-  };
-
-  handleSubmit = () => {
-    const {multiple, onChange} = this.props;
-    const {values} = this.state;
-    if (multiple)
-      onChange(values);
-    else
-      onChange(values[0]);
-    this.setState({modal: false});
-  };
-
-  handleReset = () => {
-    const {onChange} = this.props;
-    onChange([]);
-    this.setState({modal: false, values: []});
-  };
-
-  handleModalClose = () => {
-    this.setState({modal: false});
-  };
-
-  isChecked = (value) => {
-    const {values} = this.state;
-    return !!values.find(item => value.value === item.value);
-  };
-
-  render() {
-    const {options} = this.props;
-    const {modal, values} = this.state;
-
-    return <div className={values.length > 0 ? 'input-select' : 'input-select empty'}>
-      <Base className='input-select__values'
-            value={values.map(item => <div key={item['value']}>{item['name']}</div>)}
-            onClick={() => this.inputClick()}>
-        {values ? values.map(item => <div key={item['value']}>{item['name']}</div>) : null}
-      </Base>
-
-      {
-        modal ?
-          <Modal onClose={this.handleModalClose}>
-            <div className="input-select__options column">
-              {
-                options.map((item) => (
-                  <div className="row" key={item['value']}>
-                    <label className="row">
-                      <input id={`option-${item['value']}`}
-                             onChange={() => this.valueChange(item)}
-                             type="checkbox"
-                             checked={this.isChecked(item) ? 'checked' : ''}/>
-                      <div>{item['name']}</div>
-                    </label>
-                  </div>
-                ))
-              }
-              <div className="input-select__buttons row">
-                <Button className="input-select__button-reset" onClick={this.handleReset}>
-                  Сбросить
-                </Button>
-                <Button className="input-select__button-apply" onClick={this.handleSubmit}>
-                  Применить
-                </Button>
-              </div>
-            </div>
-          </Modal>
-          : null
-      }
-    </div>
-  }
+  return <div className="input-select">
+    <TextField className="input-select__input"
+        suffix={<Column><Icon name="arrow_drop_down" /><Icon name="arrow_drop_up" /></Column>}
+        value={values}>
+      <div className="input-select__options column">
+        { options.map((option, key) => {
+          console.log(selected.find(item => option.value === item.value) !== undefined);
+          return <Option
+            key={key}
+            checkbox={multiple === true}
+            checked={multiple === true && selected.find(item => option.value === item.value) !== undefined}
+            {...option}
+            onClick={handleChange}>{option.name}</Option>
+        })}
+      </div>
+    </TextField>
+  </div>
 }
