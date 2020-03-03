@@ -14,8 +14,9 @@
   min-height: 36px;
   line-height: 36px;
   align-items: center;
+  @include rui-input-color(#b0b0b0, #ffffff);
 
   &:focus-within {
-    @include rui-input-color($color_secondary);
+    @include rui-input-color($color_secondary, #ffffff);
   }
 }
