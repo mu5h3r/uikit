@@ -1,6 +1,8 @@
 import React from 'react';
 import Base from './Base.js';
 import Icon from '../../core/Icon';
+import Group from '../../core/Group';
+import Label from '../../core/Label';
 
 import '@mu5h3r/uikit/form/input/text.scss';
 
@@ -22,7 +24,7 @@ export default class Text extends React.Component<Props> {
     };
 
     render() {
-        const { value, readOnly, suffix, prefix, error, onChange, onClick, type, className } = this.props;
+        const { label, value, readOnly, suffix, prefix, error, onChange, onClick, type, className } = this.props;
 
         let classes = 'input-text';
         if (this.state.focus) classes += ' focus';
@@ -31,24 +33,22 @@ export default class Text extends React.Component<Props> {
         if (className) classes += ` ${className}`;
         if (error) classes += ' error';
 
-        return <Base className={classes} onClick={onClick}>
-            { prefix ? <div className="input-text__prefix">{prefix}</div> : null }
-            <input type={type || 'text'}
-                   readOnly={readOnly}
-                   value={value || ''}
-                   onChange={(e) => onChange(e.currentTarget.value)}
-                   onFocus={this.toggleFocus}
-                   onBlur={this.toggleFocus}
-            />
-            { this.props.children }
-            { suffix ? <div className="input-text__suffix">{suffix}</div> : null }
-            { error ? (
-              <div className="input-text__suffix input-text__error">
-                <Icon name="error" />
-                <div className="input-text__error-text">{error}</div>
-              </div>
-            ): null }
-
-        </Base>
+        return <Group className={`input-wrapper`}>
+            <Base className={classes} onClick={onClick}>
+                { prefix ? <div className="input-text__prefix">{prefix}</div> : null }
+                <input type={type || 'text'}
+                       readOnly={readOnly}
+                       value={value || ''}
+                       onChange={(e) => onChange(e.currentTarget.value)}
+                       onFocus={this.toggleFocus}
+                       onBlur={this.toggleFocus}
+                />
+                { this.props.children }
+                { suffix ? <div className="input-text__suffix">{suffix}</div> : null }
+                { error ? <div className="input-text__suffix input-text__error"><Icon name="error" /></div>: null }
+                { label ? <Label>{label}</Label> : null }
+            </Base>
+            { error ? <div className="error-text">{error}</div> : null }
+        </Group>
     }
 }

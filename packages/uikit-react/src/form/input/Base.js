@@ -4,12 +4,12 @@ import '@mu5h3r/uikit/form/input/base.scss';
 
 export default class Base extends React.Component {
   render() {
-    const {className, title, onClick} = this.props;
+    const {className, title, error, onClick} = this.props;
     let classes = ['input-base'];
     if (className) classes.push(className);
 
     return <div className={classes.join(' ')} title={title} onClick={onClick}>
       {this.props.children}
-    </div>;
+    </div>
   }
 }

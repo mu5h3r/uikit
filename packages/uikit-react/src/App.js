@@ -109,10 +109,8 @@ function App() {
 
       <h2>Panel</h2>
       <Panel>
-        <Row>
-          <Button>Test Button</Button>
-          <TextInput value={button2value} onChange={setButton2Value}/>
-        </Row>
+        <Button>Test Button</Button>
+        <TextInput value={button2value} onChange={setButton2Value}/>
       </Panel>
 
       <h2>Spinners</h2>
@@ -123,16 +121,11 @@ function App() {
       <TextInput value={button1value} onChange={setButton1Value}/>
 
       <h3>Text With Error</h3>
-      <Group>
-        <TextInput value={button1value} onChange={setButton1Value} error="Error text"/>
-        <Label>Wrong text</Label>
-      </Group>
+        <TextInput label="Wrong text" value={button1value} onChange={setButton1Value}
+                   error="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
 
       <h3>Text with label</h3>
-      <Group>
-        <TextInput value={button2value} onChange={setButton2Value}/>
-        <Label>Label</Label>
-      </Group>
+      <TextInput label="Label" value={button2value} onChange={setButton2Value}/>
 
       <h3>Text with prefix</h3>
       <Group>
