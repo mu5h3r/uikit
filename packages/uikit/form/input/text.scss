@@ -1,4 +1,5 @@
 @import '../../theme/theme';
+@import './base';
 
 .input-wrapper {
   display: inline-flex;
@@ -14,7 +15,6 @@
 }
 
 .input-wrapper > .error-text {
-  position: sticky;
   font-size: 0.9em;
   color: #ab1432;
   margin-top: 2px;
@@ -23,6 +23,7 @@
 .input-text {
   position: relative;
   width: 100%;
+  @include rui-input-color(#a0a0a0, #ffffff !important);
 
   & input[type=text], & input[type=password] {
     top: 0;
