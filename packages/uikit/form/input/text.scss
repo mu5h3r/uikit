@@ -32,8 +32,8 @@
 }
 
 .group > .input-text:not(.focus) > .label {
-  color: #b0b0b0;
   z-index: 0;
+  font-size: 14px;
 }
 
 .group > .input-text.error > .label {
@@ -76,7 +76,7 @@
   top: 50%;
   left: 5px;
   transform: translate(5px, -50%);
-  color: #b0b0b0;
+  color: #a0a0a0;
 
   &:after {
     border-color: transparent;

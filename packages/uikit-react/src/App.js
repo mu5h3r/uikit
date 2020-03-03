@@ -121,8 +121,10 @@ function App() {
       <TextInput value={button1value} onChange={setButton1Value}/>
 
       <h3>Text With Error</h3>
+        <div style={{width: '400px'}}>
         <TextInput label="Wrong text" value={button1value} onChange={setButton1Value}
                    error="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
+        </div>
 
       <h3>Text with label</h3>
       <TextInput label="Label" value={button2value} onChange={setButton2Value}/>
