@@ -1,6 +1,6 @@
 {
   "name": "@mu5h3r/uikit-react",
-  "version": "0.111.22",
+  "version": "0.111.23",
   "license": "BSD-3-Clause",
   "private": false,
   "publishConfig": {
@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",
-    "@mu5h3r/uikit": "^0.1.21",
+    "@mu5h3r/uikit": "^0.1.22",
     "moment": "^2.24.0",
     "react": "^16.10.1",
     "react-datetime": "^2.16.3"
