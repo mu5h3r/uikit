@@ -123,7 +123,10 @@ function App() {
       <TextInput value={button1value} onChange={setButton1Value}/>
 
       <h3>Text With Error</h3>
-      <TextInput value={button1value} onChange={setButton1Value} error="Error text"/>
+      <Group>
+        <TextInput value={button1value} onChange={setButton1Value} error="Error text"/>
+        <Label>Wrong text</Label>
+      </Group>
 
       <h3>Text with label</h3>
       <Group>

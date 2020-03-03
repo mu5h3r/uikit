@@ -46,16 +46,23 @@
   z-index: 0;
 }
 
+.group > .input-text.error + .label {
+  color: #ab1432;
+}
+
 .group > .input-text:not(.error) + .label {
+  color: $color_secondary;
+}
+
+.group > .input-text + .label {
   position: absolute;
   background-color: transparent;
   margin: 0;
   padding: 2px 2px;
   pointer-events: none;
-  top: -0.2rem;
+  top: 8px;
   left: 10px;
   z-index: 1;
-  color: $color_secondary;
   font-size: 0.9em;
   line-height: 0.9em;
   overflow: visible;
