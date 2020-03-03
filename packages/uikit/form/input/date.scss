@@ -1,9 +1,12 @@
+@import './base';
+
 .date-input {
   display: inline-flex;
   flex-direction: row;
   flex-grow: 0;
   flex-shrink: 1;
   align-items: center;
+  @include rui-input-color(#b0b0b0, #ffffff);
 }
 
 .date-input > input {

@@ -5,7 +5,7 @@
   position: relative;
   margin-top: 0.3em;
   margin-bottom: 0.3em;
-  @include rui-input-color(#b0b0b0);
+  @include rui-input-color(#b0b0b0, #ffffff);
   width: 100%;
 }
 

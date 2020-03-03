@@ -1,7 +1,7 @@
 @import '../../theme/theme';
 
 @mixin rui-input-color($color, $background_color: transparent) {
-  color: #333;
+  color: $font_color_dark;
   border: solid 1px $color;
   background-color: $background_color;
 }
@@ -14,8 +14,6 @@
   min-height: 36px;
   line-height: 36px;
   align-items: center;
-
-  @include rui-input-color(#b0b0b0);
 
   &:focus-within {
     @include rui-input-color($color_secondary);

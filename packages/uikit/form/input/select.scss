@@ -7,6 +7,7 @@
 .input-select {
   position: relative;
   cursor: pointer;
+  @include rui-input-color(#b0b0b0, #ffffff);
 
   & .input-select__input {
     & .material-icons:first-child {

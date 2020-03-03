@@ -23,7 +23,7 @@ export default class Text extends React.Component<Props> {
     render() {
         const { value, readOnly, suffix, prefix, onChange, onClick, type, className } = this.props;
 
-        let classes = 'input-base input-text';
+        let classes = 'input-text';
         if (this.state.focus) classes += ' focus';
         if (!value) classes += ' empty';
         if (suffix || prefix) classes += ' inline';

@@ -109,7 +109,10 @@ function App() {
 
       <h2>Panel</h2>
       <Panel>
-        <Button>Test Button</Button>
+        <Row>
+          <Button>Test Button</Button>
+          <TextInput value={button2value} onChange={setButton2Value}/>
+        </Row>
       </Panel>
 
       <h2>Spinners</h2>
