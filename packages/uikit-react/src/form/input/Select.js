@@ -60,7 +60,6 @@ export default function Select(props: Props) {
         value={values}>
       <div className="input-select__options column">
         { options.map((option, key) => {
-          console.log(selected.find(item => option.value === item.value) !== undefined);
           return <Option
             key={key}
             checkbox={multiple === true}

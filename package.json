@@ -10,6 +10,7 @@
   },
   "scripts": {
     "install": "lerna bootstrap",
+    "start": "lerna run start",
     "build": "lerna run build",
     "deploy": "lerna publish --no-push --force-publish --no-git-reset"
   }

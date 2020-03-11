@@ -111,6 +111,10 @@ function App() {
       <Panel>
         <Button>Test Button</Button>
         <TextInput value={button2value} onChange={setButton2Value}/>
+        <Group>
+          <Button type="contained">Grouped Button 1</Button>
+          <Button type="contained">Grouped Button 2</Button>
+        </Group>
       </Panel>
 
       <h2>Spinners</h2>
@@ -121,10 +125,10 @@ function App() {
       <TextInput value={button1value} onChange={setButton1Value}/>
 
       <h3>Text With Error</h3>
-        <Panel style={{maxWidth: '400px'}}>
-          <TextInput label="Wrong text" value={button1value} onChange={setButton1Value}
-                     error="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
-        </Panel>
+      <Panel style={{maxWidth: '400px'}}>
+        <TextInput label="Wrong text" value={button1value} onChange={setButton1Value}
+                   error="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
+      </Panel>
 
       <h3>Text with label</h3>
       <TextInput label="Label" value={button2value} onChange={setButton2Value}/>
@@ -153,10 +157,7 @@ function App() {
       </Group>
 
       <h3>Password</h3>
-      <Group>
-        <PasswordInput value={password1value} onChange={setPassword1Value}/>
-        <Label>Password</Label>
-      </Group>
+      <PasswordInput label="Password" value={password1value} onChange={setPassword1Value}/>
 
       <h3>Date Picker</h3>
       <Date onChange={(dateBegin, dateEnd) => console.log(dateBegin, dateEnd)} />

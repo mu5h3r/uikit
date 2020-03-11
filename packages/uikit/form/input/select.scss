@@ -48,7 +48,12 @@
 }
 
 .input-select__option {
-  padding: 2px 16px;
+  padding: 2px 10px;
+
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  justify-items: center;
 
   &:hover {
     background-color: #eee;
@@ -58,6 +63,10 @@
   &:last-child {
     border-radius: 0 0 4px 4px;
   }
+}
+
+.input-select__option > input[type=checkbox] {
+  margin-right: 10px;
 }
 
 .group > .input-select:not(:focus-within) + .label {
