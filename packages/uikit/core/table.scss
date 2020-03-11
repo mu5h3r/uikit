@@ -4,6 +4,7 @@ $table_border_color: #eee;
 
 table.table {
   border-collapse: collapse;
+  width: 100%;
 
   & > thead > tr > td {
     white-space: nowrap;
