@@ -1,6 +1,6 @@
 {
   "name": "@mu5h3r/uikit",
-  "version": "0.1.34",
+  "version": "0.1.35",
   "license": "BSD-3-Clause",
   "private": false,
   "publishConfig": {
@@ -11,5 +11,5 @@
     "/core/fonts/*"
   ],
   "scripts": {},
-  "gitHead": "8284110c6d4cfa7d4202dc13dd6ccb7a7691ccc8"
+  "gitHead": "b199b0f64e5f9d1f98c4971f1a0caab8bdda5392"
 }
