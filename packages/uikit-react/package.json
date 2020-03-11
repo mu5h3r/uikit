@@ -1,6 +1,6 @@
 {
   "name": "@mu5h3r/uikit-react",
-  "version": "0.111.37",
+  "version": "0.111.38",
   "license": "BSD-3-Clause",
   "private": false,
   "publishConfig": {
@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",
-    "@mu5h3r/uikit": "^0.1.36",
+    "@mu5h3r/uikit": "^0.1.37",
     "moment": "^2.24.0",
     "react": "^16.10.1",
     "react-datetime": "^2.16.3"
@@ -53,5 +53,5 @@
     "/form/**/*",
     "/theme/**/*"
   ],
-  "gitHead": "b5ca0edad82ab43d398233463cd60ba3d0b73c33"
+  "gitHead": "b282c1d16c2db33e51983cd72685bad96737fc21"
 }
