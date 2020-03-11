@@ -7,7 +7,7 @@ import Loader from './core/Loader';
 import Row from './grid/Row';
 import Column from './grid/Column';
 import Label from './core/Label';
-import Table, {TableHead, TableFoot} from './core/Table';
+import Table, {TableHead, TableFoot, TableCell, TableRow, TableBody} from './core/Table';
 import Panel from './core/Panel';
 import TextInput from './form/input/Text';
 import PasswordInput from './form/input/Password';
@@ -86,24 +86,34 @@ function App() {
 
       <Table>
         <TableHead>
-          <Column>Title 1</Column>
-          <Column>Title 2</Column>
-          <Column>Title 3</Column>
+          <TableCell>Title 1</TableCell>
+          <TableCell>Title 2</TableCell>
+          <TableCell>Title 3</TableCell>
+          <TableCell>Title 4</TableCell>
+          <TableCell>Title 5</TableCell>
         </TableHead>
-        <Row>
-          <Column>Value 1</Column>
-          <Column>Value 2</Column>
-          <Column>Value 3</Column>
-        </Row>
-        <Row>
-          <Column>Value 1</Column>
-          <Column>Value 2</Column>
-          <Column>Value 3</Column>
-        </Row>
+        <TableBody>
+          <TableRow>
+            <TableCell>Value 1</TableCell>
+            <TableCell>Value 2</TableCell>
+            <TableCell>Value 3</TableCell>
+            <TableCell>Value 4</TableCell>
+            <TableCell>Value 5</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Value 1</TableCell>
+            <TableCell>Value 2</TableCell>
+            <TableCell>Value 3</TableCell>
+            <TableCell>Value 4</TableCell>
+            <TableCell>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</TableCell>
+          </TableRow>
+        </TableBody>
         <TableFoot>
-          <Column>Foot Value 1</Column>
-          <Column>Foot Value 2</Column>
-          <Column>Foot Value 3</Column>
+          <TableCell>Foot Value 1</TableCell>
+          <TableCell>Foot Value 2</TableCell>
+          <TableCell>Foot Value 3</TableCell>
+          <TableCell>Foot Value 4</TableCell>
+          <TableCell>Foot Value 5</TableCell>
         </TableFoot>
       </Table>
 
