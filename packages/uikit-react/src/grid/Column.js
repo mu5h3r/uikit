@@ -7,7 +7,5 @@ export default function Column(props) {
     let classes = 'column';
     if (wrappable) classes += ' wrappable';
     if (className) classes += ' ' + className;
-    return React.forwardRef((props, ref) => (
-      <div ref={ref} className={classes} {...customProps}>{props.children}</div>
-    ));
+    return <div className={classes} {...customProps}>{props.children}</div>;
 }

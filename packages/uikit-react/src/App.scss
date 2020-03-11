@@ -52,3 +52,25 @@ html, body {
 .app-bar .button-contained {
   margin: 6px 0;
 }
+
+.table-example {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+  max-width: 600px;
+  max-height: 400px;
+  overflow: scroll;
+  background-color: #eee;
+  border-radius: 4px;
+  padding: 10px;
+
+  & > table {
+    border-radius: 4px;
+  }
+
+  & > table, & > td {
+    background-color: #fff;
+  }
+}
