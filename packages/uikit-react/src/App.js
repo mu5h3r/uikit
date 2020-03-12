@@ -108,6 +108,13 @@ function App() {
               <TableCell>Value 4</TableCell>
               <TableCell>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</TableCell>
             </TableRow>
+            <TableRow>
+              <TableCell>Value 1</TableCell>
+              <TableCell>Value 2</TableCell>
+              <TableCell>Value 3</TableCell>
+              <TableCell>Value 4</TableCell>
+              <TableCell>Value 5</TableCell>
+            </TableRow>
           </TableBody>
           <TableFoot>
             <TableCell>Foot Value 1</TableCell>

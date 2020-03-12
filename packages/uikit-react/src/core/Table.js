@@ -22,7 +22,11 @@ export function TableHead(props) {
 }
 
 export function TableBody(props) {
-  return <tbody>{props.children}</tbody>;
+  const handleScroll = (e) => {
+    if (props.onScroll) props.onScroll(e);
+  }
+
+  return <tbody onScroll={handleScroll}>{props.children}</tbody>;
 }
 
 export function TableFoot(props) {
