@@ -15,7 +15,7 @@ table.table {
   & tr {
     display: flex;
     flex-direction: row;
-    flex: 1;
+    flex-grow: 1;
     flex-shrink: 0;
     align-items: center;
   }
@@ -28,7 +28,7 @@ table.table {
     white-space: nowrap;
   }
 
-  & > thead > tr > td, & > tfoot > tr > td, & > tbody > tr > td {
+  & > thead > tr > td, & > tfoot > tr > td, & > tbody > tr > td, & th {
     display: flex;
     flex-direction: row;
     flex: 1;

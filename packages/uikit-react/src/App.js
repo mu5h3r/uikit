@@ -95,7 +95,7 @@ function App() {
           </TableHead>
           <TableBody>
             <TableRow>
-              <TableCell>Value 1</TableCell>
+              <TableCell header={true}>Cell Header 1</TableCell>
               <TableCell>Value 2</TableCell>
               <TableCell>Value 3</TableCell>
               <TableCell>Value 4</TableCell>
