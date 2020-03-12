@@ -9,7 +9,8 @@ type TableProps = {
 }
 
 type TableCellProps = TableProps & {
-  header?: bool
+  header?: bool,
+  wrappable?: bool
 }
 
 type TableBodyProps = TableProps & {
@@ -27,9 +28,9 @@ export function TableRow(props: TableProps) {
   return <tr className={classes}>{props.children}</tr>;
 }
 
-
 export function TableCell(props: TableCellProps) {
-  const classes = props.className || '';
+  let classes = props.className || '';
+  if (props.wrappable) classes += ' wrappable';
   return props.header
           ? <th className={classes}>{props.children}</th>
           : <td className={classes}>{props.children}</td>;
