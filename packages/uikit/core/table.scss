@@ -39,7 +39,7 @@ table.table {
   & > thead {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    flex-grow: 0;
     flex-shrink: 0;
     border-bottom: solid 2px $table_border_color;
   }
@@ -47,7 +47,7 @@ table.table {
   & > tbody {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    flex-grow: 0;
     flex-shrink: 1;
     min-height: 0;
     overflow-y: auto;
@@ -61,7 +61,7 @@ table.table {
   & > tfoot {
     display: flex;
     flex-direction: row;
-    flex-grow: 1;
+    flex-grow: 0;
     flex-shrink: 0;
     border-top: solid 2px $table_border_color;
   }
