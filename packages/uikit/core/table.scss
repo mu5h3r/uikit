@@ -20,7 +20,11 @@ table.table {
     align-items: center;
   }
 
-  & > thead > tr > td {
+  & > thead > tr > td, & th {
+    font-weight: bold;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
     white-space: nowrap;
   }
 
@@ -38,10 +42,6 @@ table.table {
     flex-grow: 1;
     flex-shrink: 0;
     border-bottom: solid 2px $table_border_color;
-    font-weight: bold;
-    font-size: 0.85em;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
   }
 
   & > tbody {

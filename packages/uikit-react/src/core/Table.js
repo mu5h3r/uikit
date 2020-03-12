@@ -1,27 +1,45 @@
+// @flow
+
 import React from 'react';
 import '@mu5h3r/uikit/core/table.scss';
 
-export default function Table(props) {
+type TableProps = {
+  children: any,
+  className?: string
+}
+
+type TableCellProps = TableProps & {
+  header?: bool
+}
+
+type TableBodyProps = TableProps & {
+  onScroll?: (e: Event) => void
+}
+
+export default function Table(props: TableProps) {
   let classes = 'table';
   if (props.className) classes += ' ' + props.className;
   return <table className={classes}>{props.children}</table>;
 }
 
-export function TableRow(props) {
+export function TableRow(props: TableProps) {
   const classes = props.className || '';
   return <tr className={classes}>{props.children}</tr>;
 }
 
-export function TableCell(props) {
+
+export function TableCell(props: TableCellProps) {
   const classes = props.className || '';
-  return <td className={classes}>{props.children}</td>;
+  return props.header
+          ? <th className={classes}>{props.children}</th>
+          : <td className={classes}>{props.children}</td>;
 }
 
-export function TableHead(props) {
+export function TableHead(props: TableProps) {
   return <thead><tr>{props.children}</tr></thead>;
 }
 
-export function TableBody(props) {
+export function TableBody(props: TableBodyProps) {
   const handleScroll = (e) => {
     if (props.onScroll) props.onScroll(e);
   }
@@ -29,6 +47,6 @@ export function TableBody(props) {
   return <tbody onScroll={handleScroll}>{props.children}</tbody>;
 }
 
-export function TableFoot(props) {
+export function TableFoot(props: TableProps) {
   return <tfoot><tr>{props.children}</tr></tfoot>;
 }
