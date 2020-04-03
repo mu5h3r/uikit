@@ -20,14 +20,30 @@
       border-radius: 4px;
       visibility: hidden;
       opacity: 0;
-      display: flex;
-      position: absolute;
-      top: 100%;
-      margin-top: 3px;
-      left: 0px;
+      display: flex;      
       background-color: #fff;
       z-index: 1;
       transition: visibility 0s, opacity 200ms linear;
+    }
+
+    @media screen and (max-width: 900px) {
+      & .input-select__options {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        border-radius: 0px;
+        height: 50vh;
+        width: 100vw;
+      }
+    }
+    
+    @media screen and (min-width: 900px) {
+      & .input-select__options {
+        position: absolute;
+        top: 100%;
+        margin-top: 3px;
+        left: 0px;
+      }
     }
   }
 
@@ -52,8 +68,8 @@
 
   display: flex;
   flex-wrap: nowrap;
-  white-space: nowrap;
-  justify-items: center;
+  white-space: nowrap;  
+  align-items: center;
 
   &:hover {
     background-color: #eee;
