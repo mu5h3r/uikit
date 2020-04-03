@@ -54,7 +54,7 @@ function App() {
         <Button type="contained">Contained Button</Button>
         <Button type="contained" disabled>Contained Button Disabled</Button>
         <Button type="contained" className="button-contained-red">Contained Button</Button>
-        <Button type="contained"><Icon name="account_circle" />Contained Button With Icon</Button>
+        <Button type="contained"><Icon>account_circle</Icon>Contained Button With Icon</Button>
       </Row>
 
       <h3>Outlined</h3>
@@ -62,7 +62,7 @@ function App() {
         <Button type="outlined">Outlined Button</Button>
         <Button type="outlined" disabled>Outlined Button Disabled</Button>
         <Button type="outlined" className="button-outlined-red">Outlined Button Red</Button>
-        <Button type="outlined"><Icon name="account_circle" />Outlined Button</Button>
+        <Button type="outlined"><Icon>account_circle</Icon>Outlined Button</Button>
       </Row>
 
       <h3>Text</h3>
@@ -156,7 +156,7 @@ function App() {
       <TextInput label="Label" value={button2value} onChange={setButton2Value}/>
 
       <h3>Text with prefix</h3>
-      <TextInput prefix=<Icon name="face" /> value={button2value} onChange={setButton2Value}/>
+      <TextInput prefix=<Icon>face</Icon> value={button2value} onChange={setButton2Value}/>
 
       <h3>Text with suffix</h3>
       <Group>
@@ -186,7 +186,7 @@ function App() {
 
       <h3>Modal</h3>
       <Button onClick={() => setModalVisible(!modalVisible)}>Open modal</Button>
-      <Modal visible={modalVisible} icon={<Icon name="terrain" />} title="Lorem ipsum" onClose={() => setModalVisible(false)}>
+      <Modal visible={modalVisible} icon={<Icon>terrain</Icon>} title="Lorem ipsum" onClose={() => setModalVisible(false)}>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </Modal>
     </Column>

@@ -47,12 +47,12 @@ export default class Date extends React.Component {
       <Text readOnly={true}
             value={dateStart.format(moment.localeData().longDateFormat('L'))}
             onClick={() => this.toggleCalendar('start')}
-            prefix=<Icon name="date_range"/> />
+            prefix=<Icon>date_range</Icon> />
       &nbsp;–&nbsp;
       <Text readOnly={true}
             value={dateEnd.format(moment.localeData().longDateFormat('L'))}
             onClick={() => this.toggleCalendar('end')}
-            prefix=<Icon name="date_range"/> />
+            prefix=<Icon>date_range</Icon> />
 
       {
         show

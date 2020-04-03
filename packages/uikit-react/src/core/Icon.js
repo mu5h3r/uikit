@@ -1,6 +1,12 @@
+// @flow
 import React from 'react';
+
 import '@mu5h3r/uikit/core/icon.scss';
 
-export default function Icon(props) {
-  return <i className="icon material-icons">{props.name}</i>
+type Props = {
+  children: any
+}
+
+export default function Icon(props: Props) {
+  return <i className="icon material-icons">{props.children}</i>
 }

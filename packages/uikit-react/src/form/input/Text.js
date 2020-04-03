@@ -37,7 +37,7 @@ export default class Text extends React.Component<Props> {
                        onChange={(e) => onChange(e.currentTarget.value)} />
                 { this.props.children }
                 { suffix ? <div className="input-text__suffix">{suffix}</div> : null }
-                { error ? <div className="input-text__suffix input-text__error"><Icon name="error" /></div>: null }
+                { error ? <div className="input-text__suffix input-text__error"><Icon>error</Icon></div>: null }
                 { label ? <Label>{label}</Label> : null }
             </Base>
             { error ? <div className="error-text">{error}</div> : null }

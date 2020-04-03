@@ -53,7 +53,7 @@ export default function Select(props: Props) {
 
   return <div className="input-select">
     <TextField className="input-select__input"
-        suffix={<Column><Icon name="arrow_drop_down" /><Icon name="arrow_drop_up" /></Column>}
+        suffix={<Column><Icon>arrow_drop_down</Icon><Icon>arrow_drop_up</Icon></Column>}
         value={values}>
       <div className="input-select__options column">
         { options.map((option, key) => {
