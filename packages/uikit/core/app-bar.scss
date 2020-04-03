@@ -26,6 +26,7 @@ $appbar-height: 46px;
     max-height: 100%;
     align-content: center;
     align-self: flex-end; 
+    height: $appbar-height;
 }
 
 .app-bar .button-tab {
