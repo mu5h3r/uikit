@@ -21,7 +21,7 @@ export default function Modal(props: Props) {
     if (props.onClose) props.onClose();
   };
 
-  if (visible === false) return <div />;
+  if (visible !== true) return null;
   
   const classes = className ? 'modal ' + className : 'modal';  
   return <div className="modal-wrapper" onClick={(e) => handleClose(e, true)}>
@@ -31,7 +31,7 @@ export default function Modal(props: Props) {
           ? <Group className="modal__title">
               <div>{icon}</div>
               <div>{title}</div>
-              <div><span className="modal__close" onClick={(e) => handleClose(e, false)}><Icon name="close" /></span></div>
+              <div><span className="modal__close" onClick={(e) => handleClose(e, false)}><Icon>close</Icon></span></div>
             </Group> 
           : null 
       }
