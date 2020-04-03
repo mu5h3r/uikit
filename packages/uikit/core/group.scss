@@ -11,14 +11,3 @@
   justify-items: center;
   align-items: center;
 }
-
-.app-bar > .group {
-  display: flex;
-  flex-direction: row;
-  flex-grow: 0;
-  flex-shrink: 0;
-  min-height: 100%;
-  max-height: 100%;
-  align-content: center;
-  align-self: flex-end; 
-}
