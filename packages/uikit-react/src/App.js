@@ -15,6 +15,7 @@ import Select from './form/input/Select';
 import Icon from './core/Icon';
 import Tab from './core/Tab';
 import Date from './form/input/Date';
+import Modal from './core/Modal';
 
 import './App.scss';
 
@@ -26,6 +27,8 @@ function App() {
   const [button1value, setButton1Value] = useState(null);
   const [button2value, setButton2Value] = useState(null);
   const [password1value, setPassword1Value] = useState(null);
+
+  const [modalVisible, setModalVisible] = useState(false);
 
   return <div id="example" className="column">
     <AppBar inline={true}>
@@ -180,6 +183,12 @@ function App() {
 
       <h3>Date Picker</h3>
       <Date onChange={(dateBegin, dateEnd) => console.log(dateBegin, dateEnd)} />
+
+      <h3>Modal</h3>
+      <Button onClick={() => setModalVisible(!modalVisible)}>Open modal</Button>
+      <Modal visible={modalVisible} icon={<Icon name="terrain" />} title="Lorem ipsum" onClose={() => setModalVisible(false)}>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </Modal>
     </Column>
   </div>;
 }

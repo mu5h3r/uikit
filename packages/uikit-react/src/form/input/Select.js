@@ -11,14 +11,11 @@ type OptionProps = {
   value: any,
   checkbox?: boolean,
   checked?: boolean,
-  onClick: () => void
+  onClick: (any, any) => void
 }
 
 export function Option(props: OptionProps) {
   const { children, checkbox, checked, value, onClick } = props;
-
-  console.log('Checked', checked, 'Value', value);
-
   return <div className="input-select__option" onClick={() => onClick(value, children)}>
     { checkbox ? <input type="checkbox" checked={checked} onChange={() => null} /> : null }
     { props.children }

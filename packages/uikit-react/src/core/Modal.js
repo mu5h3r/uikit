@@ -1,30 +1,44 @@
 import React from 'react';
+import Icon from './Icon';
+
+import Group from './Group';
+
 import '@mu5h3r/uikit/core/modal.scss';
 
 type Props = {
   title?: string,
-  style?: Object
+  style?: Object,
+  className?: string,
+  visible?: boolean,
+  onClose?: () => void
 }
 
-class Modal extends React.Component<Props> {
-  handleClose = (e) => {
-    if (!e.target.classList.contains('modal-wrapper')) return;
-    const {onClose} = this.props;
-    onClose();
+export default function Modal(props: Props) {  
+  const {title, style, visible, className, icon} = props;
+
+  const handleClose = (e, checkWrapper) => {    
+    if (checkWrapper && !e.target.classList.contains('modal-wrapper')) return;    
+    if (props.onClose) props.onClose();
   };
 
-  render() {
-    const {title, style} = this.props;
-
-    return <div className="modal-wrapper" onClick={this.handleClose}>
-      <div className="modal" style={style}>
-        {title ? <div className="modal__title">{title}</div> : null}
-        <div className="modal__content">
-          {this.props.children}
-        </div>
+  if (visible === false) return <div />;
+  
+  const classes = className ? 'modal ' + className : 'modal';  
+  return <div className="modal-wrapper" onClick={(e) => handleClose(e, true)}>
+    <div className={classes} style={style}>
+      { 
+        title 
+          ? <Group className="modal__title">
+              <div>{icon}</div>
+              <div>{title}</div>
+              <div><span className="modal__close" onClick={(e) => handleClose(e, false)}><Icon name="close" /></span></div>
+            </Group> 
+          : null 
+      }
+      <div className="modal__content">
+        { props.children }
       </div>
     </div>
-  }
-}
+  </div>;
 
-export default Modal;
+}
