@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import Datetime from 'react-datetime';
 import moment from 'moment';
@@ -14,7 +15,7 @@ export default class Date extends React.Component {
   state = {
     dateStart: moment().subtract(1, 'days'),
     dateEnd: moment(),
-    show: false,
+    calendarVisible: false,
     type: null  // Тип выбираемой даты start/end
   };
 
@@ -31,16 +32,15 @@ export default class Date extends React.Component {
     else throw Error('Unknown date type', this.state.type);
 
     this.props.onChange(start, end);
-    this.setState({dateStart: start, dateEnd: end, show: false});
+    this.setState({dateStart: start, dateEnd: end, calendarVisible: false});
   };
 
-  toggleCalendar = (type) => {
-    const {show} = this.state;
-    this.setState({show: !show, type: type});
+  toggleCalendar = (type) => {    
+    this.setState({calendarVisible: !this.state.calendarVisible, type: type});
   };
 
   render() {
-    const {show, dateStart, dateEnd} = this.state;
+    const {calendarVisible, dateStart, dateEnd} = this.state;
     moment.locale('ru');
 
     return <div className="date-input">
@@ -54,15 +54,11 @@ export default class Date extends React.Component {
             onClick={() => this.toggleCalendar('end')}
             prefix=<Icon>date_range</Icon> />
 
-      {
-        show
-          ? <Modal onClose={this.toggleCalendar}>
-            <div className="date-input__calendar">
-              <Datetime input={false} locale="ru" timeFormat={false} onChange={this.handleChange}/>
-            </div>
-          </Modal>
-          : null
-      }
+      <Modal visible={calendarVisible} onClose={this.toggleCalendar}>
+        <div className="date-input__calendar">
+          <Datetime input={false} locale="ru" timeFormat={false} onChange={this.handleChange}/>
+        </div>
+      </Modal>          
     </div>;
   }
 }
