@@ -165,8 +165,20 @@ function App() {
 
       <h3>Select</h3>
       <Group>
-        <Select options={[{name: 'Option 1', value: 1}, {name: 'Option 2', value: 2}, {name: 'Option 3', value: 3}]}
-                onChange={(selected) => console.log('Selected', selected)} />
+        <Select
+          options={[
+            {name: 'Option 1', value: 1},
+            {name: 'Option 2', value: 2},
+            {name: 'Option 3', value: 3},
+            {name: 'Option 4', value: 4},
+            {name: 'Option 5', value: 5},
+            {name: 'Option 6', value: 6},
+            {name: 'Option 7', value: 7},
+            {name: 'Option 8', value: 8},
+            {name: 'Option 9', value: 9},
+            {name: 'Option 10', value: 10}
+          ]}
+          onChange={(selected) => console.log('Selected', selected)} />
         <Label>Select</Label>
       </Group>
 
