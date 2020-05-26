@@ -59,7 +59,7 @@
   padding: 0 #{16 * $uikit-scale}px 0 #{16 * $uikit-scale}px;
   min-width: 64px;
 
-  @include uikit-font;
+  @include uikit-font-family;
   @include uikit-scale-font;
   font-weight: 500;
   text-transform: uppercase;
