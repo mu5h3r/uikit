@@ -4,6 +4,7 @@
 @import '~@mu5h3r/uikit/form/button';
 
 html, body {
+  @include uikit-scale-font;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Oxygen",
   "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -42,11 +43,11 @@ html, body {
 }
 
 .button-contained-red {
-  @include rui-button-contained-color(red);
+  @include uikit-button-contained-color(red);
 }
 
 .button-outlined-red {
-  @include rui-button-outlined-color(red);
+  @include uikit-button-outlined-color(red);
 }
 
 .app-bar .button-contained {

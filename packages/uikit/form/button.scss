@@ -1,6 +1,6 @@
 @import "../theme/theme";
 
-@mixin rui-button-contained-color($color) {
+@mixin uikit-button-contained-color($color) {
   background-color: $color;
   color: text-color($color);
 
@@ -15,7 +15,7 @@
   }
 }
 
-@mixin rui-button-outlined-color($color) {
+@mixin uikit-button-outlined-color($color) {
   border: solid 1px $color;
   color: $color;
 
@@ -29,8 +29,8 @@
   }
 }
 
-@mixin rui-button-text-color($color) {
-  @include rui-button-outlined-color($color);
+@mixin uikit-button-text-color($color) {
+  @include uikit-button-outlined-color($color);
   border: none;
 
   &:not(.disabled):hover {
@@ -53,14 +53,14 @@
   justify-content: space-around;
   align-items: center;
 
-  max-height: 36px;
-  min-height: 36px;
-  line-height: 36px;
-  padding: 0 16px 0 16px;
+  max-height: #{36 * $uikit-scale}px;
+  min-height: #{36 * $uikit-scale}px;
+  line-height: #{36 * $uikit-scale}px;
+  padding: 0 #{16 * $uikit-scale}px 0 #{16 * $uikit-scale}px;
   min-width: 64px;
 
-  @include rui-font;
-  @include rui-font-medium;
+  @include uikit-font;
+  @include uikit-scale-font;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: .08em;
@@ -72,15 +72,15 @@
 }
 
 .button-contained {
-  @include rui-button-contained-color($color_secondary);
+  @include uikit-button-contained-color($color_secondary);
 }
 
 .button-outlined {
-  @include rui-button-outlined-color($color_secondary);
+  @include uikit-button-outlined-color($color_secondary);
 }
 
 .button-text {
-  @include rui-button-text-color($color_secondary);
+  @include uikit-button-text-color($color_secondary);
 }
 
 .button.active:not(.disabled) {

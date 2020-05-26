@@ -1,6 +1,6 @@
 @import '../theme/theme';
 
-$appbar-height: 46px;
+$appbar-height: #{46 * $uikit-scale}px;
 
 .app-bar.row {
     position: relative;
@@ -25,7 +25,7 @@ $appbar-height: 46px;
     min-height: 100%;
     max-height: 100%;
     align-content: center;
-    align-self: flex-end; 
+    align-self: flex-end;
     height: $appbar-height;
 }
 
@@ -33,14 +33,13 @@ $appbar-height: 46px;
     flex-grow: 0;
     flex-shrink: 0;
     vertical-align: center;
-    align-self: flex-end;  
+    align-self: flex-end;
     min-height: 100%;
     max-height: 100%;
-    line-height: 46px;
+    line-height: $appbar-height;
 }
 
 .app-bar .group > .button-tab {
     margin-left: 2px;
     margin-right: 2px;
 }
-  

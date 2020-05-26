@@ -3,7 +3,7 @@
 .button-tab, .group > .button-tab {
   border-radius: 0 !important;
   border: none !important;
-  @include rui-button-text-color($font_color_light);
+  @include uikit-button-text-color($font_color_light);
 
   &:after {
     position: absolute;

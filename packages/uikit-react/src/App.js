@@ -32,7 +32,7 @@ function App() {
 
   return <div id="example" className="column">
     <AppBar inline={true}>
-      <Tab active={activeTab === 'tab1'} onClick={() => setActiveTab('tab1')}>Test Tab 1</Tab>
+      <Tab active={activeTab === 'tab1'} onClick={() => setActiveTab('tab1')}><Icon>info</Icon> Test Tab 1</Tab>
       <Group className="tab-group">
         <Tab active={activeTab === 'tab2'} onClick={() => setActiveTab('tab2')}>Test Tab 2</Tab>
         <Tab disabled={true} active={activeTab === 'tab3'} onClick={() => setActiveTab('tab3')}>Disabled Test Tab 3</Tab>

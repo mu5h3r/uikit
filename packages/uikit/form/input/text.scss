@@ -23,7 +23,7 @@
 .input-text {
   position: relative;
   width: 100%;
-  @include rui-input-color(#a0a0a0, #ffffff !important);
+  @include uikit-input-color(#a0a0a0, #ffffff !important);
 
   & input[type=text], & input[type=password] {
     top: 0;
