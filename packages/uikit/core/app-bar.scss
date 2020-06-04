@@ -17,7 +17,7 @@ $appbar-height: #{46 * $uikit-scale}px;
     background-color: $color_primary;
 }
 
-.app-bar > .group {
+.app-bar > .uikit-group {
     display: flex;
     flex-direction: row;
     flex-grow: 0;
@@ -39,7 +39,7 @@ $appbar-height: #{46 * $uikit-scale}px;
     line-height: $appbar-height;
 }
 
-.app-bar .group > .button-tab {
+.app-bar .uikit-group > .button-tab {
     margin-left: 2px;
     margin-right: 2px;
 }

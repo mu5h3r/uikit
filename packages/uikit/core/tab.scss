@@ -1,6 +1,6 @@
 @import '../form/button';
 
-.button-tab, .group > .button-tab {
+.button-tab, .uikit-group > .button-tab {
   border-radius: 0 !important;
   border: none !important;
   @include uikit-button-text-color($font_color_light);

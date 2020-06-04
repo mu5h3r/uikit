@@ -22,22 +22,22 @@ export default class Text extends React.Component<Props> {
     render() {
         const { label, value, readOnly, suffix, prefix, error, onChange, onClick, type, className, style } = this.props;
 
-        let classes = 'input-text';
+        let classes = 'uikit-input-text';
         if (!value) classes += ' empty';
         if (suffix || prefix) classes += ' inline';
         if (className) classes += ` ${className}`;
         if (error) classes += ' error';
 
-        return <Group style={style} className={`input-wrapper`}>
+        return <Group style={style} className={`uikit-input-wrapper`}>
             <Base className={classes} onClick={onClick}>
-                { prefix ? <div className="input-text__prefix">{prefix}</div> : null }
+                { prefix ? <div className="uikit-input__prefix">{prefix}</div> : null }
                 <input type={type || 'text'}
                        readOnly={readOnly}
                        value={value || ''}
                        onChange={(e) => onChange(e.currentTarget.value)} />
                 { this.props.children }
-                { suffix ? <div className="input-text__suffix">{suffix}</div> : null }
-                { error ? <div className="input-text__suffix input-text__error"><Icon>error</Icon></div>: null }
+                { suffix ? <div className="uikit-input__suffix">{suffix}</div> : null }
+                { error ? <div className="uikit-input__suffix"><Icon>error</Icon></div>: null }
                 { label ? <Label>{label}</Label> : null }
             </Base>
             { error ? <div className="error-text">{error}</div> : null }

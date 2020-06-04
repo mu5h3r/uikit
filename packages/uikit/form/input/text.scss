@@ -1,7 +1,7 @@
 @import '../../theme/theme';
 @import './base';
 
-.input-wrapper {
+.uikit-input-wrapper {
   display: inline-flex;
   flex-direction: column;
   flex-grow: 0;
@@ -12,15 +12,15 @@
   align-items: flex-start;
   margin-top: 12px;
   margin-bottom: 12px;
+
+  & > .error-text {
+    font-size: 0.9em;
+    color: #ab1432;
+    margin-top: 2px;
+  }
 }
 
-.input-wrapper > .error-text {
-  font-size: 0.9em;
-  color: #ab1432;
-  margin-top: 2px;
-}
-
-.input-text {
+.uikit-input-text {
   position: relative;
   width: 100%;
   @include uikit-input-color(#a0a0a0, #ffffff !important);
@@ -38,44 +38,26 @@
     outline: none;
   }
 
-  &:not(.error):focus-within {
-    & > .input-text__prefix, & > .input-text__suffix {
-      color: $color_secondary;
-    }
 
-    & > .label {
-      color: $color_secondary;
-    }
-  }
 }
 
-.input-text__prefix, .input-text__suffix {
-  display: inline-flex;
-  flex-direction: row;
-  justify-items: center;
-  align-items: center;
-  flex-wrap: nowrap;
-  white-space: nowrap;
-  padding-left: 8px;
-}
-
-.group > .input-text.empty:not(:focus-within) > .label {
+.uikit-group > .uikit-input-text.empty:not(:focus-within) > .label {
   z-index: 0;
   font-size: 13px;
   line-height: 13px;
 }
 
-.group > .input-text:not(.empty) > .label {
+.uikit-group > .uikit-input-text:not(.empty) > .label {
   z-index: 0;
   font-size: 12px;
   line-height: 12px;
 }
 
-.group > .input-text.error > .label {
+.uikit-group > .uikit-input-text.error > .label {
   color: #ab1432;
 }
 
-.group > .input-text > .label {
+.uikit-group > .uikit-input-text > .label {
   position: absolute;
   background-color: transparent;
   margin: 0;
@@ -103,7 +85,7 @@
   }
 }
 
-.group > .input-text.empty:not(:focus-within) > .label {
+.uikit-group > .uikit-input-text.empty:not(:focus-within) > .label {
   top: 50%;
   left: 5px;
   transform: translate(5px, -50%);

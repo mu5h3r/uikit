@@ -16,7 +16,7 @@ type OptionProps = {
 
 export function Option(props: OptionProps) {
   const { children, checkbox, checked, value, onClick } = props;
-  return <div className="input-select__option" onClick={() => onClick(value, children)}>
+  return <div className="uikit-input-select__option" onClick={() => onClick(value, children)}>
     { checkbox ? <input type="checkbox" checked={checked} onChange={() => null} /> : null }
     { props.children }
   </div>
@@ -51,11 +51,11 @@ export default function Select(props: Props) {
     return acc;
   }, '') : null;
 
-  return <div className="input-select">
-    <TextField className="input-select__input"
+  return <div className="uikit-input-select">
+    <TextField className="uikit-input-select__input"
         suffix={<Column><Icon>arrow_drop_down</Icon><Icon>arrow_drop_up</Icon></Column>}
         value={values}>
-      <div className="input-select__options column">
+      <div className="uikit-input-select__options column">
         { options.map((option, key) => {
           return <Option
             key={key}

@@ -15,19 +15,19 @@
   color: #555;
 }
 
-.group > .label:first-child {
+.uikit-group > .label:first-child {
   border-radius: 3px 0 0 3px;
 }
 
-.group > .label:last-child {
+.uikit-group > .label:last-child {
   border-radius: 0 3px 3px 0;
 }
 
-.group > .label {
+.uikit-group > .label {
   border-radius: 0;
 }
 
-.group > .label:not(:last-child) {
+.uikit-group > .label:not(:last-child) {
   border-right: solid 1px rgba(3, 3, 3, 0.1);
 }
 

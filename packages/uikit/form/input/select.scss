@@ -1,12 +1,12 @@
-.input-select input {
+.uikit-input-select input {
   cursor: pointer;
 }
 
-.input-select {
+.uikit-input-select {
   position: relative;
   cursor: pointer;
 
-  & .input-select__input {
+  & .uikit-input-select__input {
     & .material-icons:first-child {
       display: flex;
     }
@@ -15,7 +15,7 @@
       display: none;
     }
 
-    & .input-select__options {
+    & .uikit-input-select__options {
       box-shadow: 0 1px 5px rgba(100, 100, 100, 1%);
       border-radius: 4px;
       visibility: hidden;
@@ -29,7 +29,7 @@
     }
 
     @media screen and (max-width: 900px) {
-      & .input-select__options {
+      & .uikit-input-select__options {
         position: fixed;
         bottom: 0;
         left: 0;
@@ -40,7 +40,7 @@
     }
 
     @media screen and (min-width: 900px) {
-      & .input-select__options {
+      & .uikit-input-select__options {
         position: absolute;
         top: 100%;
         margin-top: 3px;
@@ -59,14 +59,14 @@
     }
   }
 
-  & .input-select__input:focus-within > .input-select__options, .input-select__options:hover {
+  & .uikit-input-select__input:focus-within > .uikit-input-select__options, .uikit-input-select__options:hover {
     visibility: visible;
     opacity: 1;
   }
 }
 
-.input-select__option {
-  padding: 0px 12px;
+.uikit-input-select__option {
+  padding: 5px 12px;
 
   display: flex;
   flex-wrap: nowrap;
@@ -84,20 +84,20 @@
   }
 }
 
-.input-select__option > input[type=checkbox] {
+.uikit-input-select__option > input[type=checkbox] {
   margin-right: 10px;
 }
 
-.group > .input-select:not(:focus-within) + .label {
+.uikit-group > .uikit-input-select:not(:focus-within) + .label {
   color: #b0b0b0;
   z-index: 0;
 }
 
-.group > .input-select:not(.empty) + .label {
+.uikit-group > .uikit-input-select:not(.empty) + .label {
   display: none;
 }
 
-.group > .input-select.empty + .label {
+.uikit-group > .uikit-input-select.empty + .label {
   top: 50%;
   left: 5px;
   transform: translate(5px, -50%);

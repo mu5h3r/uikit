@@ -6,7 +6,7 @@
   background-color: $background_color;
 }
 
-.input-base {
+.uikit-input {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   display: inline-flex;
   flex-direction: row;
@@ -21,5 +21,25 @@
 
   &.error {
     @include uikit-input-color(#ab1432, #ffffff, #ab1432);
+  }
+
+  &:not(.error):focus-within {
+    & > .uikit-input__prefix, & > .uikit-input__suffix {
+      color: $color_secondary;
+    }
+
+    & > .label {
+      color: $color_secondary;
+    }
+  }
+
+  .uikit-input__prefix, .uikit-input__suffix {
+    display: inline-flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    padding-left: 8px;
   }
 }
