@@ -144,7 +144,8 @@ function App() {
 
       <h2>Inputs</h2>
       <h3>Text</h3>
-      <TextInput value={button1value} onChange={setButton1Value}/>
+      <TextInput value={button1value} onChange={setButton1Value}
+                 help="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
 
       <h3>Text With Error</h3>
       <Panel style={{maxWidth: '400px'}}>
@@ -153,10 +154,10 @@ function App() {
       </Panel>
 
       <h3>Text with label</h3>
-      <TextInput label="Label" value={button2value} onChange={setButton2Value}/>
+      <TextInput label="Label" value={button2value} onChange={setButton2Value} />
 
       <h3>Text with prefix</h3>
-      <TextInput prefix=<Icon>face</Icon> value={button2value} onChange={setButton2Value}/>
+      <TextInput prefix={<Icon>face</Icon>} value={button2value} onChange={setButton2Value}/>
 
       <h3>Text with suffix</h3>
       <Group>

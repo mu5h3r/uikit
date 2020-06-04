@@ -20,7 +20,7 @@ export default class Text extends React.Component<Props> {
     };
 
     render() {
-        const { label, value, readOnly, suffix, prefix, error, onChange, onClick, type, className, style } = this.props;
+        const { label, value, readOnly, suffix, prefix, error, onChange, onClick, type, className, style, help } = this.props;
 
         let classes = 'uikit-input-text';
         if (!value) classes += ' empty';
@@ -40,6 +40,7 @@ export default class Text extends React.Component<Props> {
                 { error ? <div className="uikit-input__suffix"><Icon>error</Icon></div>: null }
                 { label ? <Label>{label}</Label> : null }
             </Base>
+            { help ? <div className="help-text">{help}</div> : null }
             { error ? <div className="error-text">{error}</div> : null }
         </Group>
     }

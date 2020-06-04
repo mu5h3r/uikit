@@ -17,6 +17,14 @@
     font-size: 0.9em;
     color: #ab1432;
     margin-top: 2px;
+    padding-left: 10px;
+  }
+
+  & > .help-text {
+    font-size: 0.9em;
+    color: #a0a0a0;
+    margin-top: 2px;
+    padding-left: 10px;
   }
 }
 
@@ -37,8 +45,6 @@
     font-size: 1em;
     outline: none;
   }
-
-
 }
 
 .uikit-group > .uikit-input-text.empty:not(:focus-within) > .label {
