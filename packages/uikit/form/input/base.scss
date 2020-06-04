@@ -11,8 +11,8 @@
   display: inline-flex;
   flex-direction: row;
   border-radius: 4px;
-  min-height: 36px;
-  line-height: 36px;
+  min-height: 34px;
+  line-height: 1em;
   align-items: center;
 
   &:focus-within:not(.error) {
