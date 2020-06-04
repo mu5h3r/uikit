@@ -13,7 +13,7 @@ type Props = {
 export default function Button(props: Props) {
   const {className, type, children, disabled, active, onClick} = props;
 
-  const classes = ['button', `button-${type || 'contained'}`];
+  const classes = ['uikit-button', `uikit-button-${type || 'contained'}`];
   if (className) classes.push(className);
   if (disabled) classes.push('disabled');
   if (active) classes.push('active');
