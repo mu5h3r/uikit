@@ -8,5 +8,5 @@ type Props = {
 }
 
 export default function Tab(props: Props) {
-  return <Button type="tab" {...props} />
+  return <Button variant="tab" {...props} />
 }

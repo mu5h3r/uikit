@@ -1,14 +1,11 @@
 @import '../theme/theme';
 
 body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    @include uikit-font-family();
     @include uikit-scale-font;
     color: #333;
 }
 
-input {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
 
 /*------------------------------------------------ Header ------------------------------------------------------------*/
 

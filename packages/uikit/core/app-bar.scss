@@ -40,13 +40,9 @@ $appbar-height: #{46 * $uikit-scale}px;
         line-height: $appbar-height;
     }
 
-    & .uikit-group > .uikit-button-tab {
-        margin-left: 2px;
-        margin-right: 2px;
-    }
-
-    & button.uikit-button[disabled] {
-        background-color: lighten($color_primary, 10%);
-        color: lighten($color_primary, 30%);
+    & button.uikit-button-tab[disabled],
+    & button.uikit-button-tab[disabled]:hover {
+        // background-color: lighten($color_primary, 3%);
+        color: lighten($color_primary, 25%);
     }
 }
