@@ -1,7 +1,7 @@
 @import '~@mu5h3r/uikit/core/base';
 @import '~@mu5h3r/uikit/grid';
 @import '~@mu5h3r/uikit/theme/theme';
-@import '~@mu5h3r/uikit/form/button';
+@import '~@mu5h3r/uikit/form/button.mixins';
 
 html, body {
   @include uikit-scale-font;
@@ -15,9 +15,9 @@ html, body {
 }
 
 #root, #example {
+  flex-shrink: 0;
   flex-wrap: nowrap;
-  overflow: hidden;
-  height: 100%;
+  min-height: 100%;
 }
 
 #example > .column {
@@ -38,16 +38,16 @@ html, body {
   background-color: #3498db;
 }
 
-.example-button-group > * {
+.example-button-group > .uikit-button {
   margin-right: 15px;
-}
 
-.button-contained-red {
-  @include uikit-button-contained-color(red);
-}
+  &.button-contained-red {
+    @include uikit-button-contained-color(red);
+  }
 
-.button-outlined-red {
-  @include uikit-button-outlined-color(red);
+  &.button-outlined-red {
+    @include uikit-button-outlined-color(red);
+  }
 }
 
 .app-bar .button-contained {

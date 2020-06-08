@@ -16,12 +16,11 @@ import Icon from './core/Icon';
 import Tab from './core/Tab';
 import Date from './form/input/Date';
 import Modal from './core/Modal';
+import Form from './form/Form';
 
 import './App.scss';
 
-
 function App() {
-
   const [activeTab, setActiveTab] = useState(null);
 
   const [button1value, setButton1Value] = useState(null);
@@ -29,6 +28,12 @@ function App() {
   const [password1value, setPassword1Value] = useState(null);
 
   const [modalVisible, setModalVisible] = useState(false);
+
+  const [formValue, setFormValue] = useState(null);
+
+  const handleFormSubmit = (e) => {
+    alert('Form submitted');
+  }
 
   return <div id="example" className="column">
     <AppBar inline={true}>
@@ -51,24 +56,24 @@ function App() {
       <h2>Buttons</h2>
       <h3>Contained</h3>
       <Row className="example-button-group">
-        <Button type="contained">Contained Button</Button>
-        <Button type="contained" disabled>Contained Button Disabled</Button>
-        <Button type="contained" className="button-contained-red">Contained Button</Button>
-        <Button type="contained"><Icon>account_circle</Icon>Contained Button With Icon</Button>
+        <Button variant="contained">Contained Button</Button>
+        <Button variant="contained" disabled>Contained Button Disabled</Button>
+        <Button variant="contained" className="button-contained-red">Contained Button</Button>
+        <Button variant="contained"><Icon>account_circle</Icon>Contained Button With Icon</Button>
       </Row>
 
       <h3>Outlined</h3>
       <Row className="example-button-group">
-        <Button type="outlined">Outlined Button</Button>
-        <Button type="outlined" disabled>Outlined Button Disabled</Button>
-        <Button type="outlined" className="button-outlined-red">Outlined Button Red</Button>
-        <Button type="outlined"><Icon>account_circle</Icon>Outlined Button</Button>
+        <Button variant="outlined">Outlined Button</Button>
+        <Button variant="outlined" disabled>Outlined Button Disabled</Button>
+        <Button variant="outlined" className="button-outlined-red">Outlined Button Red</Button>
+        <Button variant="outlined"><Icon>account_circle</Icon>Outlined Button</Button>
       </Row>
 
       <h3>Text</h3>
       <Row className="example-button-group">
-        <Button type="text">Text Button</Button>
-        <Button type="text" disabled>Text Button Disabled</Button>
+        <Button variant="text">Text Button</Button>
+        <Button variant="text" disabled>Text Button Disabled</Button>
       </Row>
 
       <h2>Labels</h2>
@@ -134,8 +139,8 @@ function App() {
         <Button>Test Button</Button>
         <TextInput value={button2value} onChange={setButton2Value}/>
         <Group>
-          <Button type="contained">Grouped Button 1</Button>
-          <Button type="contained">Grouped Button 2</Button>
+          <Button variant="contained">Grouped Button 1</Button>
+          <Button variant="contained">Grouped Button 2</Button>
         </Group>
       </Panel>
 
@@ -192,10 +197,16 @@ function App() {
       </Group>
 
       <h3>Password</h3>
-      <PasswordInput label="Password" value={password1value} onChange={setPassword1Value}/>
+      <PasswordInput label="Password" value={password1value} onChange={setPassword1Value} />
 
       <h3>Date Picker</h3>
       <Date onChange={(dateBegin, dateEnd) => console.log(dateBegin, dateEnd)} />
+
+      <h3>Form</h3>
+      <Form onSubmit={handleFormSubmit}>
+        <TextInput label="Input text" value={formValue} onChange={(value) => setFormValue(value)} />
+        <Button type="submit" variant="submit">Submit</Button>
+      </Form>
 
       <h3>Modal</h3>
       <Button onClick={() => setModalVisible(!modalVisible)}>Open modal</Button>

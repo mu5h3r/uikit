@@ -1,48 +1,7 @@
-@import "../theme/theme";
+@import '../theme/theme';
+@import './button.mixins';
 
-@mixin uikit-button-contained-color($color) {
-  background-color: $color;
-  color: text-color($color);
-
-  &:not(.disabled):hover {
-    background-color: lighten($color, 10%);
-    border-color: lighten($color, 40%);
-  }
-
-  &.disabled {
-    background-color: lighten($font_color_dark, 80%);
-    color: lighten($font_color_dark, 60%);
-  }
-}
-
-@mixin uikit-button-outlined-color($color) {
-  border: solid 1px $color;
-  color: $color;
-
-  &:not(.disabled):hover {
-    background-color: rgba(lighten($color, 40%), 0.5);
-  }
-
-  &.disabled {
-    border-color: lighten($font_color_dark, 75%);
-    color: lighten($font_color_dark, 55%);
-  }
-}
-
-@mixin uikit-button-text-color($color) {
-  @include uikit-button-outlined-color($color);
-  border: none;
-
-  &:not(.disabled):hover {
-    background-color: rgba(lighten($color_secondary, 40%), 0.5);
-  }
-
-  &.disabled {
-    color: lighten($font_color_dark, 55%);
-  }
-}
-
-.uikit-button {
+button.uikit-button {
   position: relative;
   display: inline-flex;
   flex-direction: row;
@@ -68,45 +27,50 @@
   cursor: pointer;
   user-select: none;
   border-radius: 4px;
+
+  border: none;
+  margin: 0;
+
+  &.active:not([disabled]) {
+    background-color: #353535;
+    border: none;
+    color: #bbb;
+  }
+
+  &[disabled] {
+    background: none;
+    cursor: not-allowed;
+  }
 }
 
-.uikit-button-contained {
-  @include uikit-button-contained-color($color_secondary);
-}
-
-.uikit-button-outlined {
-  @include uikit-button-outlined-color($color_secondary);
-}
-
-.uikit-button-text {
+button.uikit-button-text {
   @include uikit-button-text-color($color_secondary);
 }
 
-.uikit-button.active:not(.disabled) {
-  background-color: #353535;
-  border: none;
-  color: #bbb;
+button.uikit-button-outlined {
+  @include uikit-button-outlined-color($color_secondary);
 }
 
-.uikit-button.disabled {
-  cursor: not-allowed;
+button.uikit-button-contained {
+  @include uikit-button-contained-color($color_secondary);
 }
 
-.uikit-group > .uikit-button:not(.disabled):not(:first-child):hover, .uikit-group .uikit-button:not(.disabled):not(:last-child):hover ~ .uikit-button {
+.uikit-group > button.uikit-button:not(.disabled):not(:first-child):hover,
+.uikit-group button.uikit-button:not(.disabled):not(:last-child):hover ~ button.uikit-button {
   border-left: solid 1px rgba(255, 0, 0, 0);
 }
 
-.uikit-group > .uikit-button:not(:first-child):not(:last-child) {
+.uikit-group > button.uikit-button:not(:first-child):not(:last-child) {
   border-radius: 0;
   border-left: solid 1px rgba(255, 255, 255, 0.1)
 }
 
-.uikit-group > .uikit-button:first-child:not(:last-child) {
+.uikit-group > button.uikit-button:first-child:not(:last-child) {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
 
-.uikit-group > .uikit-button:last-child:not(:first-child) {
+.uikit-group > button.uikit-button:last-child:not(:first-child) {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
   border-left: solid 1px rgba(255, 255, 255, 0.1)

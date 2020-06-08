@@ -1,0 +1,42 @@
+@mixin uikit-button-contained-color($color) {
+  background-color: $color;
+  color: text-color($color);
+
+  &:not([disabled]):hover {
+    background-color: lighten($color, 10%);
+    border-color: lighten($color, 40%);
+  }
+
+  &[disabled] {
+    background-color: lighten($font_color_dark, 80%);
+    color: lighten($font_color_dark, 60%);
+  }
+}
+
+@mixin uikit-button-outlined-color($color) {
+  background: none;
+  border: solid 1px $color;
+  color: $color;
+
+  &:not([disabled]):hover {
+    background-color: rgba(lighten($color, 40%), 0.5);
+  }
+
+  &[disabled] {
+    border-color: lighten($font_color_dark, 75%);
+    color: lighten($font_color_dark, 55%);
+  }
+}
+
+@mixin uikit-button-text-color($color) {
+  @include uikit-button-outlined-color($color);
+  border: none;
+
+  &:not([disabled]):hover {
+    background-color: rgba(lighten($color_secondary, 40%), 0.5);
+  }
+
+  &[disabled] {
+    color: lighten($font_color_dark, 55%);
+  }
+}
