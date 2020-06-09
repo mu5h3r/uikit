@@ -2,10 +2,12 @@
 
 @mixin uikit-font-family {
   font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @mixin uikit-font-size ($scale: 1) {
-  font-size: #{12 * $scale}px;
+  font-size: #{14 * $scale}px;
 }
 
 $font_color_dark: #202020 !default;
