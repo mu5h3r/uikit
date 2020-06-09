@@ -42,7 +42,6 @@ function App() {
         <Tab active={activeTab === 'tab2'} onClick={() => setActiveTab('tab2')}>Test Tab 2</Tab>
         <Tab disabled={true} active={activeTab === 'tab3'} onClick={() => setActiveTab('tab3')}>Disabled Test Tab 3</Tab>
         <Tab active={activeTab === 'tab4'} onClick={() => setActiveTab('tab4')}>Test Tab 4</Tab>
-        <Tab active={activeTab === 'tab4'} onClick={() => setActiveTab('tab4')}>Русский язык</Tab>
       </Group>
       <Group>
         <Button>Test Button 4</Button>
