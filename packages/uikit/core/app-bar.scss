@@ -3,7 +3,7 @@
 $appbar-height: #{46 * $uikit-scale}px;
 
 .app-bar {
-    &.row {
+    &.uikit-row {
         position: relative;
         display: flex;
         flex-grow: 0;

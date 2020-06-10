@@ -1,22 +1,19 @@
 @import '../theme/theme';
 
-.panel {
+.uikit-panel, .row.uikit-panel {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  flex-grow: 1;
+  flex-grow: 0;
   background-color: $color_tertiary;
   border-bottom: solid 1px #eee;
   padding: 4px;
-}
 
-.panel > * {
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-.panel > .uikit-group > *:not(.button) {
-  margin-left: 5px;
-  margin-right: 5px;
+  & > .uikit-group.uikit-wrappable > * {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
 }

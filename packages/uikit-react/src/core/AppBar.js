@@ -11,7 +11,7 @@ export default class AppBar extends React.Component<Props> {
     const {inline, className} = this.props;
 
     let classes = ['app-bar'];
-    classes.push(inline === true || inline === undefined ? 'row' : 'column');
+    classes.push(inline === true || inline === undefined ? 'uikit-row' : 'uikit-column');
     if (className) classes.push(className);
 
     return <div className={classes.join(' ')}>

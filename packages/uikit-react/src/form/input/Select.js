@@ -55,7 +55,7 @@ export default function Select(props: Props) {
     <TextField className="uikit-input-select__input"
         suffix={<Column><Icon>arrow_drop_down</Icon><Icon>arrow_drop_up</Icon></Column>}
         value={values}>
-      <div className="uikit-input-select__options column">
+      <Column className="uikit-input-select__options">
         { options.map((option, key) => {
           return <Option
             key={key}
@@ -64,7 +64,7 @@ export default function Select(props: Props) {
             {...option}
             onClick={handleChange}>{option.name}</Option>
         })}
-      </div>
+      </Column>
     </TextField>
   </div>
 }

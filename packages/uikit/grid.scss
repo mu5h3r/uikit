@@ -1,4 +1,4 @@
-.row {
+.uikit-row {
   display: flex;
   flex-direction: row;
   flex-grow: 0;
@@ -9,7 +9,7 @@
   align-items: center;
 }
 
-.column {
+.uikit-column {
   display: flex;
   flex-direction: column;
   flex-grow: 0;
@@ -19,6 +19,7 @@
   min-width: 0;
 }
 
-.wrappable {
+.uikit-wrappable {
   flex-wrap: wrap;
+  flex-shrink: 1;
 }

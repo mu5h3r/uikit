@@ -137,7 +137,10 @@ function App() {
       <h2>Panel</h2>
       <Panel>
         <Button>Test Button</Button>
-        <TextInput value={button2value} onChange={setButton2Value}/>
+        <Group wrappable={true}>
+          <TextInput label="Input 1" value={button2value} onChange={(value) => console.log(value)} />
+          <TextInput label="Input 2" value={button2value} onChange={(value) => console.log(value)} />
+        </Group>
         <Group>
           <Button variant="contained">Grouped Button 1</Button>
           <Button variant="contained">Grouped Button 2</Button>

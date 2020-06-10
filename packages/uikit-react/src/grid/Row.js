@@ -8,9 +8,9 @@ type Props = {
 }
 
 export default function Row(props: Props) {
-    const { className, wrappable, ...customProps } = props;
-    let classes = 'row';
-    if (wrappable) classes += ` wrappable`;
-    if (className) classes += ` ${className}`;
-    return <div className={classes} {...customProps}>{props.children}</div>;
+    const {className, wrappable, ...customProps} = props;
+    const classes = ['uikit-row'];
+    if (wrappable) classes.push('uikit-wrappable');
+    if (className) classes.push(className);
+    return <div className={classes.join(' ')} {...customProps}>{props.children}</div>;
 }

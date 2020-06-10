@@ -43,6 +43,10 @@ button.uikit-button {
   }
 }
 
+button.uikit-button:focus {
+  outline: none;
+}
+
 button.uikit-button-text {
   @include uikit-button-text-color($color_secondary);
 }

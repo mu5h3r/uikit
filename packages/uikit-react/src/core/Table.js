@@ -30,7 +30,7 @@ export function TableRow(props: TableProps) {
 
 export function TableCell(props: TableCellProps) {
   let classes = props.className || '';
-  if (props.wrappable) classes += ' wrappable';
+  if (props.wrappable) classes += ' uikit-wrappable';
   return props.header
           ? <th className={classes}>{props.children}</th>
           : <td className={classes}>{props.children}</td>;
