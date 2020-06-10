@@ -1,13 +1,13 @@
 {
   "name": "@mu5h3r/uikit-react",
-  "version": "0.111.96",
+  "version": "0.111.97",
   "license": "BSD-3-Clause",
   "private": false,
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@mu5h3r/uikit": "^0.1.95",
+    "@mu5h3r/uikit": "^0.1.96",
     "moment": "^2.24.0",
     "react": "16.13.0",
     "react-datetime": "^2.16.3",
@@ -57,5 +57,5 @@
     "/form/**/*",
     "/theme/**/*"
   ],
-  "gitHead": "08c894955052220a98dda0362375cdef507b1a4d"
+  "gitHead": "9d82bddb9f7f9d2ec5c9aec78f706c142514f023"
 }
