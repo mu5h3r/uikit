@@ -6,6 +6,7 @@ type Props = {
   className ?: string,
   type ?: 'button' | 'reset' | 'submit',
   variant ?: 'text' | 'outlined' | 'contained',
+  title ?: string,
   children : string,
   disabled ?: boolean,
   active ?: boolean,
@@ -13,11 +14,11 @@ type Props = {
 }
 
 export default function Button(props: Props) {
-  const {className, type, variant, children, disabled, active, onClick} = props;
+  const {className, type, variant, children, disabled, active, title, onClick} = props;
 
   const classes = [`uikit-button-${variant || 'contained'}`, 'uikit-button'];
   if (className) classes.push(className);
   if (active) classes.push('active');
 
-  return <button disabled={disabled} type={type || 'submit'} className={classes.join(' ')} onClick={onClick}>{children}</button>;
+  return <button title={title} disabled={disabled} type={type || 'submit'} className={classes.join(' ')} onClick={onClick}>{children}</button>;
 }
