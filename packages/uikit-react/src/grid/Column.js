@@ -7,10 +7,18 @@ type Props = {
     wrappable?: boolean
 }
 
-export default function Column(props: Props) {
+const Column = React.forwardRef((props: Props, ref) => {
     const { className, wrappable, ...customProps } = props;
+
     const classes = ['uikit-column'];
     if (wrappable) classes.push('uikit-wrappable');
     if (className) classes.push(className);
-    return <div className={classes.join(' ')} {...customProps}>{props.children}</div>;
-}
+
+    return (
+        <div ref={ref} className={classes.join(' ')} {...customProps}>
+            {props.children}
+       </div>
+    );
+});
+
+export default Column;

@@ -51,3 +51,8 @@ div.warning .loader {
 div.warning .loader .loader__circle > div {
     background-color: #fff;
 }
+
+.uikit-invisible {
+    visibility: hidden;
+    opacity: 0;
+}

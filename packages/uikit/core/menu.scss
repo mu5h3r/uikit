@@ -1,0 +1,49 @@
+.uikit-menu {
+    transition: visibility 0s, opacity 200ms linear;
+
+    display: flex;
+    background-color: #ffffff;
+    z-index: 1;
+    max-height: 350px;
+    overflow-y: scroll;
+    border: solid 1px #a0a0a0;
+    border-radius: 4px;
+
+    & > .uikit-menu__item {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-shrink: 0;
+
+        // justify-content: center;
+        align-items: center;
+
+        white-space: nowrap;
+        padding: 8px 16px;
+        min-width: 100px;
+
+        &:hover {
+            background-color: #eee;
+            cursor: pointer;
+        }
+
+        &:last-child {
+            border-radius: 0 0 4px 4px;
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        border-radius: 0px;
+        height: 75vh;
+        width: 100vw;
+    }
+
+    @media screen and (min-width: 900px) {
+        position: absolute;
+        top: 100%;
+        margin-top: 3px;
+        left: 0px;
+    }
+}

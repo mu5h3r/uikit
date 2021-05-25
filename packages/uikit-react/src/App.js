@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 import AppBar from './core/AppBar';
 import Group from './core/Group';
@@ -7,7 +7,7 @@ import Loader from './core/Loader';
 import Row from './grid/Row';
 import Column from './grid/Column';
 import Label from './core/Label';
-import Table, {TableHead, TableFoot, TableCell, TableRow, TableBody} from './core/Table';
+import Table, { TableHead, TableFoot, TableCell, TableRow, TableBody } from './core/Table';
 import Panel from './core/Panel';
 import TextInput from './form/input/Text';
 import PasswordInput from './form/input/Password';
@@ -19,6 +19,7 @@ import Modal from './core/Modal';
 import Form from './form/Form';
 
 import './App.scss';
+import Menu from './core/Menu';
 
 function App() {
   const [activeTab, setActiveTab] = useState(null);
@@ -30,6 +31,7 @@ function App() {
   const [modalVisible, setModalVisible] = useState(false);
 
   const [formValue, setFormValue] = useState(null);
+  const [menu, showMenu] = useState(false);
 
   const handleFormSubmit = (e) => {
     alert('Form submitted');
@@ -172,6 +174,21 @@ function App() {
         <TextInput suffix="Suffix text" value={button2value} onChange={setButton2Value}/>
       </Group>
 
+      <h3>Menu</h3>
+      <Group>
+        <Button variant="outlined" onClick={() => showMenu(true)}>Open Menu</Button>
+        <Menu visible={menu} onClickOutside={() => showMenu(false)}>
+          {
+            [
+              {name: "Item 1", value: 1},
+              {name: "Item 2", value: 2}
+            ].map((item, index) => (
+              <Menu.Item key={index} value={item.value}>{item.name}</Menu.Item>
+            ))
+          }
+        </Menu>
+      </Group>
+
       <h3>Select</h3>
       <Group>
         <Select
@@ -187,6 +204,7 @@ function App() {
             {name: 'Option 9', value: 9},
             {name: 'Option 10', value: 10}
           ]}
+          label="Select"
           onChange={(selected) => console.log('Selected', selected)} />
         <Label>Select</Label>
       </Group>
@@ -195,6 +213,7 @@ function App() {
       <Group>
         <Select multiple={true}
                 options={[{name: 'Option 1', value: 1}, {name: 'Option 2', value: 2}, {name: 'Option 3', value: 3}]}
+                label="Select Multiple"
                 onChange={(selected) => console.log('Selected', selected)} />
         <Label>Select Multiple</Label>
       </Group>

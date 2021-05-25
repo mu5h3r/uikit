@@ -14,39 +14,6 @@
     & .material-icons:last-child {
       display: none;
     }
-
-    & .uikit-input-select__options {
-      box-shadow: 0 1px 5px rgba(100, 100, 100, 1%);
-      border-radius: 4px;
-      visibility: hidden;
-      opacity: 0;
-      display: flex;
-      background-color: #fff;
-      z-index: 1;
-      transition: visibility 0s, opacity 200ms linear;
-      max-height: 350px;
-      overflow-y: scroll;
-    }
-
-    @media screen and (max-width: 900px) {
-      & .uikit-input-select__options {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        border-radius: 0px;
-        height: 75vh;
-        width: 100vw;
-      }
-    }
-
-    @media screen and (min-width: 900px) {
-      & .uikit-input-select__options {
-        position: absolute;
-        top: 100%;
-        margin-top: 3px;
-        left: 0px;
-      }
-    }
   }
 
   & .input-select__input:focus-within {
@@ -65,27 +32,8 @@
   }
 }
 
-.uikit-input-select__option {
-  padding: 5px 12px;
-
-  display: flex;
-  flex-wrap: nowrap;
-  flex-shrink: 0;
-  white-space: nowrap;
-  align-items: center;
-
-  &:hover {
-    background-color: #eee;
-    cursor: pointer;
-  }
-
-  &:last-child {
-    border-radius: 0 0 4px 4px;
-  }
-}
-
-.uikit-input-select__option > input[type=checkbox] {
-  margin-right: 10px;
+.uikit-menu__item > input[type=checkbox] {
+  margin-right: 16px;
 }
 
 .uikit-group > .uikit-input-select:not(:focus-within) + .label {

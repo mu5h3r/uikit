@@ -3,8 +3,10 @@ import React, { useState } from 'react';
 import TextField from './Text';
 import Icon from '../../core/Icon';
 import Column from '../../grid/Column';
+import Menu from '../../core/Menu';
 
 import '@mu5h3r/uikit/form/input/select.scss';
+
 
 type OptionProps = {
   children: any,
@@ -16,21 +18,23 @@ type OptionProps = {
 
 export function Option(props: OptionProps) {
   const { children, checkbox, checked, value, onClick } = props;
-  return <div className="uikit-input-select__option" onClick={() => onClick(value, children)}>
+  return <Menu.Item onClick={() => onClick(value, children)}>
     { checkbox ? <input type="checkbox" checked={checked} onChange={() => null} /> : null }
     { props.children }
-  </div>
+  </Menu.Item>
 }
 
 type Props = {
+  label: String,
   options: any,
   multiple?: boolean,
   onChange: (any) => void
 }
 
 export default function Select(props: Props) {
-  const [selected, setSelected] = useState([]);
-  const [valueVersion, setValueVersion] = useState(0);
+  const [ selected, setSelected ] = useState([]);
+  const [ valueVersion, setValueVersion ] = useState(0);
+  const [ menu, showMenu ] = useState(false);
   const { multiple, options, onChange } = props;
 
   const handleChange = (value, name) => {
@@ -45,26 +49,31 @@ export default function Select(props: Props) {
     setValueVersion(valueVersion + 1);
   };
 
-  const values = selected ? selected.reduce((acc, item) => {
-    if (acc) acc += ', ';
-    acc += item.name;
-    return acc;
+  const values = selected ? selected.reduce((accumulator, item) => {
+    if (accumulator) accumulator += ', ';
+    accumulator += item.name;
+    return accumulator;
   }, '') : null;
 
   return <div className="uikit-input-select">
     <TextField className="uikit-input-select__input"
-        suffix={<Column><Icon>arrow_drop_down</Icon><Icon>arrow_drop_up</Icon></Column>}
-        value={values}>
-      <Column className="uikit-input-select__options">
-        { options.map((option, key) => {
-          return <Option
-            key={key}
-            checkbox={multiple === true}
-            checked={multiple === true && selected.find(item => option.value === item.value) !== undefined}
-            {...option}
-            onClick={handleChange}>{option.name}</Option>
-        })}
-      </Column>
+          suffix={<Column><Icon>arrow_drop_down</Icon><Icon>arrow_drop_up</Icon></Column>}
+          value={values}
+          label={props.label}
+          onClick={() => showMenu(!menu)}>
+
+      <Menu visible={menu} onClickOutside={() => showMenu(false)}>
+        {
+          options.map((option, key) => {
+            return <Option
+              key={key}
+              checkbox={multiple === true}
+              checked={multiple === true && selected.find(item => option.value === item.value) !== undefined}
+              {...option}
+              onClick={handleChange}>{option.name}</Option>
+          })
+        }
+      </Menu>
     </TextField>
   </div>
 }
