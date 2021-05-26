@@ -8,9 +8,9 @@
   },
   "dependencies": {
     "@mu5h3r/uikit": "^0.1.100",
-    "moment": "^2.24.0",
+    "moment": "^2.29.1",
     "react": "16.13.0",
-    "react-datetime": "^2.16.3",
+    "react-datetime": "^3.0.4",
     "react-dom": "16.13.0"
   },
   "peerDependencies": {

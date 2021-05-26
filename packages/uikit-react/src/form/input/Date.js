@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Datetime from 'react-datetime';
 import moment from 'moment';
 import 'moment/locale/ru.js';
@@ -11,54 +11,67 @@ import Icon from '../../core/Icon';
 import 'react-datetime/css/react-datetime.css';
 import '@mu5h3r/uikit/form/input/date.scss';
 
-export default class Date extends React.Component {
-  state = {
-    dateStart: moment().subtract(1, 'days'),
-    dateEnd: moment(),
-    calendarVisible: false,
-    type: null  // Тип выбираемой даты start/end
+const DateInput = (props) => {
+  const [ dateStart, setDateStart ] = useState(moment().subtract(1, 'days'));
+  const [ dateEnd, setDateEnd ] = useState(moment());
+  const [ calendarVisible, showCalendar ] = useState(false);
+  const [ type, setType ] = useState();
+
+  const { onChange } = props;
+
+  useEffect(() => {
+    onChange(dateStart, dateEnd);
+  }, []);
+
+  const handleChange = (date) => {
+    let start = dateStart;
+    let end = dateEnd;
+
+    if (type === 'start') {
+      start = date;
+    } else if (type === 'end') {
+      end = date;
+    } else {
+      throw Error('Unknown date type', type);
+    }
+
+    onChange(start, end);
+
+    setDateStart(start);
+    setDateEnd(end);
+    showCalendar(false);
+
+    // this.setState({dateStart: start, dateEnd: end, calendarVisible: false});
   };
 
-  componentDidMount = () => {
-    const {dateStart, dateEnd} = this.state;
-    this.props.onChange(dateStart, dateEnd);
+  const toggleCalendar = (type) => {
+    showCalendar(!calendarVisible);
+    setType(type);
   };
 
-  handleChange = (date) => {
-    let {dateStart: start, dateEnd: end} = this.state;
 
-    if (this.state.type === 'start') start = date;
-    else if (this.state.type === 'end') end = date;
-    else throw Error('Unknown date type', this.state.type);
+  // const {calendarVisible, dateStart, dateEnd} = this.state;
+  moment.locale('ru');
 
-    this.props.onChange(start, end);
-    this.setState({dateStart: start, dateEnd: end, calendarVisible: false});
-  };
-
-  toggleCalendar = (type) => {    
-    this.setState({calendarVisible: !this.state.calendarVisible, type: type});
-  };
-
-  render() {
-    const {calendarVisible, dateStart, dateEnd} = this.state;
-    moment.locale('ru');
-
-    return <div className="date-input">
+  return (
+    <div className="date-input">
       <Text readOnly={true}
             value={dateStart.format(moment.localeData().longDateFormat('L'))}
-            onClick={() => this.toggleCalendar('start')}
-            prefix=<Icon>date_range</Icon> />
+            onClick={() => toggleCalendar('start')}
+            prefix={<Icon>date_range</Icon>} />
       &nbsp;–&nbsp;
       <Text readOnly={true}
             value={dateEnd.format(moment.localeData().longDateFormat('L'))}
-            onClick={() => this.toggleCalendar('end')}
-            prefix=<Icon>date_range</Icon> />
+            onClick={() => toggleCalendar('end')}
+            prefix={<Icon>date_range</Icon>} />
 
-      <Modal visible={calendarVisible} onClose={this.toggleCalendar}>
+      <Modal visible={calendarVisible} onClose={toggleCalendar}>
         <div className="date-input__calendar">
-          <Datetime input={false} locale="ru" timeFormat={false} onChange={this.handleChange}/>
+          <Datetime input={false} locale="ru" timeFormat={false} onChange={handleChange}/>
         </div>
-      </Modal>          
-    </div>;
-  }
+      </Modal>
+    </div>
+  );
 }
+
+export default DateInput;

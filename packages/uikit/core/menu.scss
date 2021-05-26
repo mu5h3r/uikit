@@ -1,25 +1,28 @@
-.uikit-menu {
-    transition: visibility 0s, opacity 200ms linear;
+@import './base';
 
+.uikit-menu {
     display: flex;
-    background-color: #ffffff;
     z-index: 1;
+
     max-height: 350px;
     overflow-y: scroll;
+
+    background-color: #ffffff;
     border: solid 1px #a0a0a0;
     border-radius: 4px;
+
+    transition: visibility 0s, opacity 200ms linear;
 
     & > .uikit-menu__item {
         display: flex;
         flex-wrap: nowrap;
         flex-shrink: 0;
-
-        // justify-content: center;
         align-items: center;
 
-        white-space: nowrap;
-        padding: 8px 16px;
         min-width: 100px;
+        padding: 8px 16px;
+
+        white-space: nowrap;
 
         &:hover {
             background-color: #eee;
@@ -35,7 +38,7 @@
         position: fixed;
         bottom: 0;
         left: 0;
-        border-radius: 0px;
+        border-radius: 0;
         height: 75vh;
         width: 100vw;
     }

@@ -40,9 +40,11 @@ const Menu = props => {
         classes.push('uikit-invisible');
     }
 
-    return <Column ref={wrapper} className={classes.join(' ')}>
-        {props.children}
-    </Column>
+    return (
+        <Column ref={wrapper} className={classes.join(' ')}>
+            {props.children}
+        </Column>
+    );
 }
 
 Menu.Item = MenuItem;

@@ -1,12 +1,11 @@
 // @flow
 import React, { useState } from 'react';
-import TextField from './Text';
-import Icon from '../../core/Icon';
 import Column from '../../grid/Column';
+import Icon from '../../core/Icon';
 import Menu from '../../core/Menu';
+import TextField from './Text';
 
 import '@mu5h3r/uikit/form/input/select.scss';
-
 
 type OptionProps = {
   children: any,
@@ -31,9 +30,9 @@ type Props = {
   onChange: (any) => void
 }
 
-export default function Select(props: Props) {
+const SelectInput = (props: Props) => {
   const [ selected, setSelected ] = useState([]);
-  const [ valueVersion, setValueVersion ] = useState(0);
+  const [ version, setVersion ] = useState(0);
   const [ menu, showMenu ] = useState(false);
   const { multiple, options, onChange } = props;
 
@@ -46,7 +45,7 @@ export default function Select(props: Props) {
     } else values = [newValue];
     onChange(values);
     setSelected(values);
-    setValueVersion(valueVersion + 1);
+    setVersion(version + 1);
   };
 
   const values = selected ? selected.reduce((accumulator, item) => {
@@ -60,7 +59,7 @@ export default function Select(props: Props) {
           suffix={<Column><Icon>arrow_drop_down</Icon><Icon>arrow_drop_up</Icon></Column>}
           value={values}
           label={props.label}
-          onClick={() => showMenu(!menu)}>
+          onClick={() => showMenu(!menu)} >
 
       <Menu visible={menu} onClickOutside={() => showMenu(false)}>
         {
@@ -77,3 +76,5 @@ export default function Select(props: Props) {
     </TextField>
   </div>
 }
+
+export default SelectInput;

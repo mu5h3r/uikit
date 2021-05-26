@@ -14,7 +14,7 @@ type Props = {
     onChange?: () => void
 };
 
-export default function (props: Props) {
+const TextInput = (props: Props) => {
     const { type, autoFocus, className, style, help, label, value, readOnly, suffix, prefix, error, onChange, onClick } = props;
 
     let classes = 'uikit-input-text';
@@ -40,3 +40,5 @@ export default function (props: Props) {
         { error ? <div className="error-text">{error}</div> : null }
     </Group>
 }
+
+export default TextInput;
