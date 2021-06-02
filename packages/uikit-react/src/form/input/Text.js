@@ -21,7 +21,7 @@ const TextInput = (props: Props) => {
     if (!value) classes += ' empty';
     if (suffix || prefix) classes += ' inline';
     if (className) classes += ` ${className}`;
-    if (error) classes += ' error';
+    if (error) classes += ' uikit-error';
     if (readOnly) classes += ' uikit-readonly'
 
     return <Group style={style} className={`uikit-input-wrapper`}>
