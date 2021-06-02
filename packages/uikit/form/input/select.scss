@@ -15,7 +15,7 @@
       display: none;
     }
 
-    &:focus-within {
+    &:not(.uikit-readonly):focus-within {
       & .uikit-input__suffix .material-icons:first-child {
         display: none;
       }

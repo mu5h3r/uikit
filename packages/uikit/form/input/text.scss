@@ -29,12 +29,17 @@
 
 .uikit-input-text {
   position: relative;
-  width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: stretch;
+  flex-direction: row;
+
   @include uikit-input-color(#a0a0a0, #ffffff);
 
   & input[type=text], & input[type=password] {
+    position: relative;
     top: 0;
-    left: 0;
+    right: 0;
     border: none;
     height: 100%;
     width: 100%;
@@ -52,20 +57,22 @@
   line-height: 13px;
 }
 
-.uikit-group > .uikit-input-text:not(.empty) > .uikit-label {
+.uikit-group > .uikit-input-text:not(.empty) .uikit-label {
   z-index: 0;
   font-size: 13px;
   line-height: 13px;
 }
 
-.uikit-group > .uikit-input-text.error > .uikit-label {
+.uikit-group > .uikit-input-text.uikit-error .uikit-label {
   color: #ab1432;
 }
 
-.uikit-group > .uikit-input-text > .uikit-label {
+.uikit-group > .uikit-input-text .uikit-label {
   display: flex;
   top: 0;
   align-self: center;
+
+  pointer-events: none;
 
   background-color: transparent;
   margin: 0;
@@ -78,8 +85,8 @@
   transition: all 75ms ease-in 0s;
 }
 
-.uikit-group > .uikit-input-text:not(.uikit-readonly):focus-within > .uikit-label,
-.uikit-group > .uikit-input-text:not(.empty) > .uikit-label
+.uikit-group > .uikit-input-text:not(.uikit-readonly):focus-within .uikit-label,
+.uikit-group > .uikit-input-text:not(.empty) .uikit-label
  {
   position: absolute;
   top: -9px;
@@ -99,10 +106,28 @@
   }
 }
 
-.uikit-group > .uikit-input-text:not(:focus-within):not(.uikit-readonly).empty > .uikit-label {
+.uikit-group > .uikit-input-text:not(:focus-within):not(.uikit-readonly).empty .uikit-label {
   padding-left: 10px;
 
   &:after {
     border-color: transparent;
   }
+}
+
+.uikit-input-text > .uikit-input-wrapper__center {
+  display: flex;
+
+  overflow: hidden;
+
+  & > .uikit-label {
+    min-height: 100%;
+    display: flex;
+    align-self: flex-start;
+    align-items: baseline;
+    line-height: 100%;
+  }
+}
+
+.uikit-input-text > .uikit-input-wrapper__center > input {
+  display: flex;
 }

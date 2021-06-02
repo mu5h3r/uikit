@@ -21,19 +21,21 @@ const TextInput = (props: Props) => {
     if (!value) classes += ' empty';
     if (suffix || prefix) classes += ' inline';
     if (className) classes += ` ${className}`;
-    if (error) classes += ' error';
+    if (error) classes += ' uikit-error';
     if (readOnly) classes += ' uikit-readonly'
 
     return <Group style={style} className={`uikit-input-wrapper`}>
         <Base className={classes} onClick={onClick}>
             { prefix ? <div className="uikit-input__prefix">{prefix}</div> : null }
-            { label ? <Label>{label}</Label> : null }
-            <input type={type || 'text'}
-                   autoFocus={autoFocus || false}
-                   readOnly={readOnly}
-                   value={value || ''}
-                   onChange={(e) => onChange(e.currentTarget.value)} />
-            { props.children }
+            <div className="uikit-input-wrapper__center">
+                { label ? <Label>{label}</Label> : null }
+                <input type={type || 'text'}
+                    autoFocus={autoFocus || false}
+                    readOnly={readOnly}
+                    value={value || ''}
+                    onChange={(e) => onChange(e.currentTarget.value)} />
+                { props.children }
+            </div>
             { suffix ? <div className="uikit-input__suffix">{suffix}</div> : null }
             { error ? <div className="uikit-input__suffix"><Icon>error</Icon></div>: null }
         </Base>

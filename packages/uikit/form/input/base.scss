@@ -53,7 +53,7 @@ $readonly_color: #bebebe;
   }
 
   &:not(.uikit-readonly) {
-    &:focus-within:not(.error) {
+    &:focus-within:not(.uikit-error) {
       @include uikit-input-color($color_secondary, #ffffff);
     }
 
@@ -66,7 +66,7 @@ $readonly_color: #bebebe;
         color: $color_secondary;
       }
 
-      & > .uikit-label {
+      & .uikit-label {
         color: $color_secondary;
       }
     }
@@ -80,5 +80,10 @@ $readonly_color: #bebebe;
     flex-wrap: nowrap;
     white-space: nowrap;
     padding-left: 8px;
+  }
+
+  .uikit-input__suffix {
+    display: flex;
+    min-height: 100%;
   }
 }
