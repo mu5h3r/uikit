@@ -1,4 +1,3 @@
-// @flow
 import React, { useState, useEffect } from 'react';
 import Datetime from 'react-datetime';
 import moment from 'moment';
@@ -11,17 +10,22 @@ import Icon from '../../core/Icon';
 import 'react-datetime/css/react-datetime.css';
 import '@mu5h3r/uikit/form/input/date.scss';
 
-const DateInput = (props) => {
+type Props = {
+  onChange: (any) => void
+};
+
+const DateInput = (props: Props) => {
+  const { onChange } = props;
+
   const [ dateStart, setDateStart ] = useState(moment().subtract(1, 'days'));
   const [ dateEnd, setDateEnd ] = useState(moment());
   const [ calendarVisible, showCalendar ] = useState(false);
   const [ type, setType ] = useState();
 
-  const { onChange } = props;
 
   useEffect(() => {
     onChange(dateStart, dateEnd);
-  }, []);
+  }, [dateStart, dateEnd, onChange]);
 
   const handleChange = (date) => {
     let start = dateStart;
@@ -40,8 +44,6 @@ const DateInput = (props) => {
     setDateStart(start);
     setDateEnd(end);
     showCalendar(false);
-
-    // this.setState({dateStart: start, dateEnd: end, calendarVisible: false});
   };
 
   const toggleCalendar = (type) => {
@@ -49,18 +51,16 @@ const DateInput = (props) => {
     setType(type);
   };
 
-
-  // const {calendarVisible, dateStart, dateEnd} = this.state;
   moment.locale('ru');
 
   return (
     <div className="date-input">
-      <Text readOnly={true}
+      <Text readOnly={false}
             value={dateStart.format(moment.localeData().longDateFormat('L'))}
             onClick={() => toggleCalendar('start')}
             prefix={<Icon>date_range</Icon>} />
       &nbsp;–&nbsp;
-      <Text readOnly={true}
+      <Text readOnly={false}
             value={dateEnd.format(moment.localeData().longDateFormat('L'))}
             onClick={() => toggleCalendar('end')}
             prefix={<Icon>date_range</Icon>} />
