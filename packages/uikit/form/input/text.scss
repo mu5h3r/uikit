@@ -114,7 +114,7 @@
   }
 }
 
-.uikit-input-text > .uikit-input-wrapper__center {
+.uikit-input-text > .uikit-text-input__wrapper {
   display: flex;
 
   overflow: hidden;
@@ -128,6 +128,6 @@
   }
 }
 
-.uikit-input-text > .uikit-input-wrapper__center > input {
+.uikit-input-text > .uikit-text-input__wrapper > input {
   display: flex;
 }
