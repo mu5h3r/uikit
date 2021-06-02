@@ -155,12 +155,14 @@ function App() {
       <h2>Inputs</h2>
       <h3>Text</h3>
       <TextInput value={button1value} onChange={setButton1Value}
-                 help="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+                 help="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua" />
+      <TextInput readOnly={true} value="Read only text"
+                 help="Read only input" />
 
       <h3>Text With Error</h3>
       <Panel style={{maxWidth: '400px'}}>
         <TextInput label="Wrong text" value={button1value} onChange={setButton1Value}
-                   error="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
+                   error="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"/>
       </Panel>
 
       <h3>Text with label</h3>
@@ -190,33 +192,85 @@ function App() {
       </Group>
 
       <h3>Select</h3>
-      <Group>
-        <Select
-          options={[
-            {name: 'Option 1', value: 1},
-            {name: 'Option 2', value: 2},
-            {name: 'Option 3', value: 3},
-            {name: 'Option 4', value: 4},
-            {name: 'Option 5', value: 5},
-            {name: 'Option 6', value: 6},
-            {name: 'Option 7', value: 7},
-            {name: 'Option 8', value: 8},
-            {name: 'Option 9', value: 9},
-            {name: 'Option 10', value: 10}
-          ]}
-          label="Select"
-          onChange={(selected) => console.log('Selected', selected)} />
-        <Label>Select</Label>
-      </Group>
+      <Select
+        label="Select"
+        options={[
+          {name: 'Option 1', value: 1},
+          {name: 'Option 2', value: 2},
+          {name: 'Option 3', value: 3},
+          {name: 'Option 4', value: 4},
+          {name: 'Option 5', value: 5},
+          {name: 'Option 6', value: 6},
+          {name: 'Option 7', value: 7},
+          {name: 'Option 8', value: 8},
+          {name: 'Option 9', value: 9},
+          {name: 'Option 10', value: 10}
+        ]}
+        onChange={(selected) => console.log('Selected', selected)} />
+
+      <h3>Select with prefix</h3>
+      <Select
+        label="Select with prefix"
+        prefix={<Icon>list</Icon>}
+        options={[
+          {name: 'Option 1', value: 1},
+          {name: 'Option 2', value: 2},
+          {name: 'Option 3', value: 3},
+          {name: 'Option 4', value: 4},
+          {name: 'Option 5', value: 5},
+          {name: 'Option 6', value: 6},
+          {name: 'Option 7', value: 7},
+          {name: 'Option 8', value: 8},
+          {name: 'Option 9', value: 9},
+          {name: 'Option 10', value: 10}
+        ]}
+        onChange={(selected) => console.log('Selected', selected)} />
+
+      <h3>Read Only Select</h3>
+      <Select
+        prefix={<Icon>lock</Icon>}
+        readOnly={true}
+        label="Read only select"
+        options={[
+          {name: 'Option 1', value: 1},
+          {name: 'Option 2', value: 2},
+          {name: 'Option 3', value: 3},
+          {name: 'Option 4', value: 4},
+          {name: 'Option 5', value: 5},
+          {name: 'Option 6', value: 6},
+          {name: 'Option 7', value: 7},
+          {name: 'Option 8', value: 8},
+          {name: 'Option 9', value: 9},
+          {name: 'Option 10', value: 10}
+        ]}
+        onChange={(selected) => console.log('Selected', selected)} />
+
+      <h4>With Initial Value</h4>
+      <Select
+        prefix={<Icon>lock</Icon>}
+        readOnly={true}
+        label="Read only select"
+        values={[4]}
+        options={[
+          {name: 'Option 1', value: 1},
+          {name: 'Option 2', value: 2},
+          {name: 'Option 3', value: 3},
+          {name: 'Option 4', value: 4},
+          {name: 'Option 5', value: 5},
+          {name: 'Option 6', value: 6},
+          {name: 'Option 7', value: 7},
+          {name: 'Option 8', value: 8},
+          {name: 'Option 9', value: 9},
+          {name: 'Option 10', value: 10}
+        ]}
+        onChange={(selected) => console.log('Selected', selected)} />
 
       <h3>Select Multiple</h3>
-      <Group>
-        <Select multiple={true}
-                options={[{name: 'Option 1', value: 1}, {name: 'Option 2', value: 2}, {name: 'Option 3', value: 3}]}
-                label="Select Multiple"
-                onChange={(selected) => console.log('Selected', selected)} />
-        <Label>Select Multiple</Label>
-      </Group>
+      <Select
+        label="Select multiple"
+        multiple={true}
+        options={[{name: 'Option 1', value: 1}, {name: 'Option 2', value: 2}, {name: 'Option 3', value: 3}]}
+        onChange={(selected) => console.log('Selected', selected)} />
 
       <h3>Password</h3>
       <PasswordInput label="Password" value={password1value} onChange={setPassword1Value} />

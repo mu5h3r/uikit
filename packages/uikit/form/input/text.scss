@@ -12,14 +12,14 @@
   margin-top: 12px;
   margin-bottom: 12px;
 
-  & > .error-text {
+  & > .uikit-error-text {
     font-size: 0.9em;
     color: #ab1432;
     margin-top: 2px;
     padding-left: 10px;
   }
 
-  & > .help-text {
+  & > .uikit-help-text {
     font-size: 0.9em;
     color: #a0a0a0;
     margin-top: 2px;
@@ -30,7 +30,7 @@
 .uikit-input-text {
   position: relative;
   width: 100%;
-  @include uikit-input-color(#a0a0a0, #ffffff !important);
+  @include uikit-input-color(#a0a0a0, #ffffff);
 
   & input[type=text], & input[type=password] {
     top: 0;
@@ -46,57 +46,61 @@
   }
 }
 
-.uikit-group > .uikit-input-text.empty:not(:focus-within) > .label {
+.uikit-group > .uikit-input-text.empty:not(:focus-within) > .uikit-label {
   z-index: 0;
   font-size: 13px;
   line-height: 13px;
 }
 
-.uikit-group > .uikit-input-text:not(.empty) > .label {
+.uikit-group > .uikit-input-text:not(.empty) > .uikit-label {
   z-index: 0;
-  font-size: 12px;
-  line-height: 12px;
+  font-size: 13px;
+  line-height: 13px;
 }
 
-.uikit-group > .uikit-input-text.error > .label {
+.uikit-group > .uikit-input-text.error > .uikit-label {
   color: #ab1432;
 }
 
-.uikit-group > .uikit-input-text > .label {
-  position: absolute;
+.uikit-group > .uikit-input-text > .uikit-label {
+  display: flex;
+  top: 0;
+  align-self: center;
+
   background-color: transparent;
   margin: 0;
   padding: 2px 2px;
   pointer-events: none;
+  z-index: 1;
+  font-size: 13px;
+  line-height: 13px;
+  overflow: visible;
+  transition: all 75ms ease-in 0s;
+}
+
+.uikit-group > .uikit-input-text:not(.uikit-readonly):focus-within > .uikit-label,
+.uikit-group > .uikit-input-text:not(.empty) > .uikit-label
+ {
+  position: absolute;
   top: -9px;
   left: 10px;
-  z-index: 1;
-  font-size: 12px;
-  line-height: 12px;
-  overflow: visible;
-  transition: all 70ms ease-in 0s;
 
   &:after {
-      content: attr(data-content);
-      padding-right: 0.4rem;
-      overflow: hidden;
-      position: absolute;
-      top: 7px;
-      left: -0.1em;
-      height: 1px;
-      border-bottom: solid 1px $font_color_light;
-      z-index: -1;
-      color: transparent;
+    content: attr(data-content);
+    padding-right: 0.4rem;
+    overflow: hidden;
+    position: absolute;
+    top: 7px;
+    left: -0.1em;
+    height: 1px;
+    border-bottom: solid 1px $font_color_light !important;
+    z-index: -1;
+    color: transparent;
   }
 }
 
-.uikit-group > .uikit-input-text.empty:not(:focus-within) > .label {
-  top: 50%;
-  left: 5px;
-  transform: translate(5px, -50%);
-  color: #a0a0a0;
-  font-size: 13px;
-  line-height: 13px;
+.uikit-group > .uikit-input-text:not(:focus-within):not(.uikit-readonly).empty > .uikit-label {
+  padding-left: 10px;
 
   &:after {
     border-color: transparent;

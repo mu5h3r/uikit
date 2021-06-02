@@ -1,8 +1,18 @@
 @import '../../theme/theme';
 
+$readonly_color: #bebebe;
+
 @mixin uikit-input-color($color, $background_color: #ffffff, $font_color: $font_color_dark) {
   color: $font_color;
-  border: solid 1px $color;
+
+  &:not(.uikit-readonly) {
+    border: solid 1px $color;
+  }
+
+  &.uikit-readonly {
+    border: solid 1px $readonly_color;
+  }
+
   background-color: $background_color;
 }
 
@@ -14,21 +24,51 @@
   line-height: 1em;
   align-items: center;
 
-  &:focus-within:not(.error) {
-    @include uikit-input-color($color_secondary, #ffffff);
-  }
+  &.uikit-readonly {
+    cursor: not-allowed;
+    background: repeating-linear-gradient(
+      45deg,
+      #ff000000,
+      #ff000000 4px,
+      #dedede30 4px,
+      #dedede30 6px
+    );
 
-  &.error {
-    @include uikit-input-color(#ab1432, #ffffff, #ab1432);
-  }
-
-  &:not(.error):focus-within {
-    & > .uikit-input__prefix, & > .uikit-input__suffix {
-      color: $color_secondary;
+    & > input {
+      cursor: inherit;
+      color: $readonly_color;
     }
 
-    & > .label {
-      color: $color_secondary;
+    & .uikit-input__prefix .icon {
+      color: $readonly_color;
+    }
+
+    & .uikit-input__suffix .icon {
+      color: $readonly_color;
+    }
+
+    & > .uikit-label {
+      color: $readonly_color;
+    }
+  }
+
+  &:not(.uikit-readonly) {
+    &:focus-within:not(.error) {
+      @include uikit-input-color($color_secondary, #ffffff);
+    }
+
+    &.uikit-error {
+      @include uikit-input-color(#ab1432, #ffffff, #ab1432);
+    }
+
+    &:not(.uikit-error):focus-within {
+      & > .uikit-input__prefix, & > .uikit-input__suffix {
+        color: $color_secondary;
+      }
+
+      & > .uikit-label {
+        color: $color_secondary;
+      }
     }
   }
 

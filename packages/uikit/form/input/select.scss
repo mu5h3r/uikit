@@ -7,22 +7,22 @@
   cursor: pointer;
 
   & .uikit-input-select__input {
-    & .material-icons:first-child {
+    & .uikit-input__suffix .material-icons:first-child {
       display: flex;
     }
 
-    & .material-icons:last-child {
-      display: none;
-    }
-  }
-
-  & .input-select__input:focus-within {
-    & .material-icons:first-child {
+    & .uikit-input__suffix .material-icons:last-child {
       display: none;
     }
 
-    & .material-icons:last-child {
-      display: flex;
+    &:focus-within {
+      & .uikit-input__suffix .material-icons:first-child {
+        display: none;
+      }
+
+      & .uikit-input__suffix .material-icons:last-child {
+        display: flex;
+      }
     }
   }
 
@@ -34,24 +34,4 @@
 
 .uikit-menu__item > input[type=checkbox] {
   margin-right: 16px;
-}
-
-.uikit-group > .uikit-input-select:not(:focus-within) + .label {
-  color: #b0b0b0;
-  z-index: 0;
-}
-
-.uikit-group > .uikit-input-select:not(.empty) + .label {
-  display: none;
-}
-
-.uikit-group > .uikit-input-select.empty + .label {
-  top: 50%;
-  left: 5px;
-  transform: translate(5px, -50%);
-  color: #b0b0b0;
-
-  &:after {
-    border-color: transparent;
-  }
 }
