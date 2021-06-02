@@ -27,7 +27,7 @@ const TextInput = (props: Props) => {
     return <Group style={style} className={`uikit-input-wrapper`}>
         <Base className={classes} onClick={onClick}>
             { prefix ? <div className="uikit-input__prefix">{prefix}</div> : null }
-            <div className="uikit-input-wrapper__center">
+            <div className="uikit-text-input__wrapper">
                 { label ? <Label>{label}</Label> : null }
                 <input type={type || 'text'}
                     autoFocus={autoFocus || false}

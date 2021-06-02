@@ -71,9 +71,6 @@
   display: flex;
   top: 0;
   align-self: center;
-
-  pointer-events: none;
-
   background-color: transparent;
   margin: 0;
   padding: 2px 2px;
@@ -107,7 +104,12 @@
 }
 
 .uikit-group > .uikit-input-text:not(:focus-within):not(.uikit-readonly).empty .uikit-label {
-  padding-left: 10px;
+  padding: 0;
+  margin-left: 8px;
+  display: flex;
+  max-height: 100%;
+  min-height: 100%;
+  align-items: center;
 
   &:after {
     border-color: transparent;
@@ -116,7 +118,6 @@
 
 .uikit-input-text > .uikit-text-input__wrapper {
   display: flex;
-
   overflow: hidden;
 
   & > .uikit-label {
@@ -130,4 +131,8 @@
 
 .uikit-input-text > .uikit-text-input__wrapper > input {
   display: flex;
+}
+
+input[type=text] {
+  float:right;
 }

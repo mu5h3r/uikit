@@ -34,7 +34,7 @@ $readonly_color: #bebebe;
       #dedede30 6px
     );
 
-    & > input {
+    & input {
       cursor: inherit;
       color: $readonly_color;
     }
@@ -47,7 +47,7 @@ $readonly_color: #bebebe;
       color: $readonly_color;
     }
 
-    & > .uikit-label {
+    & .uikit-label {
       color: $readonly_color;
     }
   }
