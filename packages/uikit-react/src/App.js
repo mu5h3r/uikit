@@ -193,6 +193,7 @@ function App() {
 
       <h3>Select</h3>
       <Select
+        style={{minWidth: "500px"}}
         label="Select"
         options={[
           {name: 'Option 1', value: 1},

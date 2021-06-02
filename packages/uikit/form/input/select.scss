@@ -32,6 +32,15 @@
   }
 }
 
-.uikit-menu__item > input[type=checkbox] {
+.uikit-menu__option > input[type=checkbox] {
   margin-right: 16px;
+}
+
+.uikit-input-select > .uikit-menu {
+  @media screen and (min-width: 900px) {
+    position: absolute;
+    top: 80%;
+    margin-top: 3px;
+    left: 0px;
+  }
 }

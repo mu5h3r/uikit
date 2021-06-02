@@ -41,10 +41,10 @@ const SelectInput = (props: Props) => {
     let values = [];
 
     if (multiple) {
-      values = selected;
       if (selected === undefined) {
         values.push(value);
       } else if (selected.find(item => value === item) === undefined) {
+        values = selected;
         values.push(value);
       } else {
         values = selected.filter((item) => item !== value);
@@ -54,6 +54,7 @@ const SelectInput = (props: Props) => {
     }
 
     setSelected(values);
+    showOptions(false);
     setVersion(version + 1);
     onChange(values);
   };
@@ -72,8 +73,7 @@ const SelectInput = (props: Props) => {
           suffix={<Column><Icon>arrow_drop_down</Icon><Icon>arrow_drop_up</Icon></Column>}
           value={textValue}
           label={props.label}
-          onClick={() => readOnly !== true && showOptions(!optionsVisible)} >
-
+          onClick={() => readOnly !== true && showOptions(!optionsVisible)}></TextField>
       <Menu visible={optionsVisible} onClickOutside={() => showOptions(false)}>
         {
           options.map((option, key) => {
@@ -86,7 +86,6 @@ const SelectInput = (props: Props) => {
           })
         }
       </Menu>
-    </TextField>
   </div>
 }
 
