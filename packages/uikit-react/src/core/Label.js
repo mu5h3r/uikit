@@ -9,7 +9,7 @@ type Props = {
 }
 
 export default function Label(props: Props) {
-  let classes = "label";
+  let classes = "uikit-label";
   if (props.className)
     classes = `${classes} ${props.className}`;
   return <div className={classes} data-content={props.children}>{props.children}</div>
