@@ -68,11 +68,12 @@ const SelectInput = (props: Props) => {
 
   return <div className="uikit-input-select">
     <TextField className="uikit-input-select__input"
-          prefix={prefix}
-          readOnly={readOnly}
-          suffix={<Column><Icon>arrow_drop_down</Icon><Icon>arrow_drop_up</Icon></Column>}
-          value={textValue}
           label={props.label}
+          help={props.help}
+          value={textValue}
+          prefix={prefix}
+          suffix={<Column><Icon>arrow_drop_down</Icon><Icon>arrow_drop_up</Icon></Column>}
+          readOnly={readOnly}
           onClick={() => readOnly !== true && showOptions(!optionsVisible)}></TextField>
       <Menu visible={optionsVisible} onClickOutside={() => showOptions(false)}>
         {

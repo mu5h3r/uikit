@@ -195,6 +195,7 @@ function App() {
       <Select
         style={{minWidth: "500px"}}
         label="Select"
+        help="Select"
         options={[
           {name: 'Option 1', value: 1},
           {name: 'Option 2', value: 2},
@@ -212,6 +213,7 @@ function App() {
       <h3>Select with prefix</h3>
       <Select
         label="Select with prefix"
+        help="Select with prefix"
         prefix={<Icon>list</Icon>}
         options={[
           {name: 'Option 1', value: 1},
@@ -229,9 +231,10 @@ function App() {
 
       <h3>Read Only Select</h3>
       <Select
+        label="Read only select"
+        help="Read only select"
         prefix={<Icon>lock</Icon>}
         readOnly={true}
-        label="Read only select"
         options={[
           {name: 'Option 1', value: 1},
           {name: 'Option 2', value: 2},
@@ -248,9 +251,10 @@ function App() {
 
       <h4>With Initial Value</h4>
       <Select
+        label="Read only select"
+        help="Read only select with initial value"
         prefix={<Icon>lock</Icon>}
         readOnly={true}
-        label="Read only select"
         values={[4]}
         options={[
           {name: 'Option 1', value: 1},
