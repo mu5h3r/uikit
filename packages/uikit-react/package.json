@@ -1,13 +1,13 @@
 {
   "name": "@mu5h3r/uikit-react",
-  "version": "0.111.106",
+  "version": "0.111.107",
   "license": "BSD-3-Clause",
   "private": false,
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@mu5h3r/uikit": "^0.1.105",
+    "@mu5h3r/uikit": "^0.1.106",
     "moment": "^2.29.1",
     "react": "16.13.0",
     "react-datetime": "^3.0.4",
