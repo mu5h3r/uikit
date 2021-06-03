@@ -7,21 +7,27 @@
   cursor: pointer;
 
   & .uikit-input-select__input {
-    & .uikit-input__suffix .material-icons:first-child {
-      display: flex;
-    }
-
-    & .uikit-input__suffix .material-icons:last-child {
+    &.uikit-readonly .uikit-input__suffix .material-icons {
       display: none;
     }
 
-    &:not(.uikit-readonly):focus-within {
+    &:not(.uikit-readonly) {
       & .uikit-input__suffix .material-icons:first-child {
-        display: none;
+        display: flex;
       }
 
       & .uikit-input__suffix .material-icons:last-child {
-        display: flex;
+        display: none;
+      }
+
+      &:focus-within {
+        & .uikit-input__suffix .material-icons:first-child {
+          display: none;
+        }
+
+        & .uikit-input__suffix .material-icons:last-child {
+          display: flex;
+        }
       }
     }
   }

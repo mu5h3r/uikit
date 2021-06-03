@@ -25,7 +25,7 @@ const DateInput = (props: Props) => {
 
   useEffect(() => {
     onChange(dateStart, dateEnd);
-  }, [dateStart, dateEnd, onChange]);
+  }, []);
 
   const handleChange = (date) => {
     let start = dateStart;
