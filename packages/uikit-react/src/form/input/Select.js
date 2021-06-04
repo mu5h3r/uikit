@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Column from '../../grid/Column';
 import Icon from '../../core/Icon';
 import Menu from '../../core/Menu';
@@ -27,7 +27,7 @@ type Props = {
   values: any, // Initial values
   options: any,
   multiple?: boolean,
-  onChange: (any) => void
+  onChange: any => void
 }
 
 const SelectInput = (props: Props) => {
@@ -35,9 +35,22 @@ const SelectInput = (props: Props) => {
 
   const [ selected, setSelected ] = useState();
   const [ version, setVersion ] = useState(0);
+  const [ filter, setFilter ] = useState();
   const [ optionsVisible, showOptions ] = useState(false);
+  const [ textValue, setTextValue ] = useState();
+
+  // Use initial values if nothing selected.
+  const selectedValues = selected || values || [];
+
+  const handleClick = () => {
+    if (readOnly !== true) {
+      showOptions(!optionsVisible);
+      setFilter('');
+    }
+  }
 
   const handleChange = (value, name) => {
+    console.log('__CHANGE__');
     let values = [];
 
     if (multiple) {
@@ -57,33 +70,51 @@ const SelectInput = (props: Props) => {
     showOptions(false);
     setVersion(version + 1);
     onChange(values);
+    setFilter(undefined);
   };
 
-  // Use initial values if nothing selected.
-  const selectedValues = selected || values || [];
-  const textValue = options.filter(item => selectedValues.includes(item.value))
-    .reduce((accumulator, item, index) => (
-      accumulator += `${index > 0 ? ', ' : ''}${item.name}`
-    ), '');
+  useEffect(() => {
+    console.log('FILTER', filter);
+
+    if (filter !== undefined) {
+      setTextValue(filter);
+    } else {
+      setTextValue(
+        options
+          .filter(item => {
+            if (selectedValues.length > 0) {
+              return selectedValues.includes(item.value);
+            }
+            return false;
+          })
+          .reduce((accumulator, item, index) => (
+            accumulator += `${index > 0 ? ', ' : ''}${item.name}`
+          ), '')
+      );
+    }
+  }, [filter, options, selectedValues]);
 
   return <div className="uikit-input-select">
     <TextField className="uikit-input-select__input"
           label={props.label}
           help={props.help}
-          value={textValue}
+          value={filter || textValue}
           prefix={prefix}
           suffix={<Column><Icon>arrow_drop_down</Icon><Icon>arrow_drop_up</Icon></Column>}
           readOnly={readOnly}
-          onClick={() => readOnly !== true && showOptions(!optionsVisible)}></TextField>
+          onChange={value => setFilter(value.toLowerCase())}
+          onClick={handleClick} />
       <Menu visible={optionsVisible} onClickOutside={() => showOptions(false)}>
         {
-          options.map((option, key) => {
+          options.filter(item => (
+            (filter && item.name.toLowerCase().includes(filter)) || (!filter && true)
+          )).map(option => {
             return <Option
-              key={key}
+              key={option.value}
               checkbox={multiple === true}
               checked={multiple === true && selectedValues.includes(option.value)}
               {...option}
-              onClick={handleChange}>{option.name}</Option>
+              onClick={handleChange }>{option.name}</Option>
           })
         }
       </Menu>

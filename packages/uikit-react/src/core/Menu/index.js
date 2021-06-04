@@ -4,14 +4,14 @@ import Column from '../../grid/Column';
 import '@mu5h3r/uikit/core/menu.scss';
 
 const MenuItem = props => {
-    const { className, value, onClick } = props;
+    const { key, className, value, onClick } = props;
     const classes = ['uikit-menu__option'];
     if (className) {
         classes.push(className);
     }
 
     return (
-        <div className={classes.join(' ')} onClick={() => onClick && onClick(value)}>
+        <div key={key} className={classes.join(' ')} onClick={() => onClick && onClick(value)}>
             {props.children}
         </div>
     );

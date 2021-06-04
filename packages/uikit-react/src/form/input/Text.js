@@ -11,11 +11,12 @@ type Props = {
     type ?: string,
     className?: string,
     onClick?: () => void,
-    onChange?: () => void
+    onChange?: value => void,
+    onBlur?: any => void
 };
 
 const TextInput = (props: Props) => {
-    const { type, autoFocus, className, style, help, label, value, readOnly, suffix, prefix, error, onChange, onClick } = props;
+    const { type, autoFocus, className, style, help, label, value, readOnly, suffix, prefix, error, onChange, onClick, onBlur } = props;
 
     let classes = 'uikit-input-text';
     if (!value) classes += ' empty';
@@ -33,7 +34,8 @@ const TextInput = (props: Props) => {
                     autoFocus={autoFocus || false}
                     readOnly={readOnly}
                     value={value || ''}
-                    onChange={(e) => onChange(e.currentTarget.value)} />
+                    onChange={(e) => onChange(e.currentTarget.value)}
+                    onBlur={onBlur} />
                 { props.children }
             </div>
             { suffix ? <div className="uikit-input__suffix">{suffix}</div> : null }
