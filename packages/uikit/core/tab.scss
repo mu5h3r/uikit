@@ -3,7 +3,13 @@
 .uikit-button-tab, .uikit-group > .uikit-button-tab {
   border-radius: 0 !important;
   border: none !important;
+
   @include uikit-button-text-color($font_color_light);
+
+
+  &:hover {
+    background: none !important;
+  }
 
   &:after {
     position: absolute;
@@ -18,7 +24,7 @@
     border-top: solid 1.8px $font_color_light !important;
   }
 
-  &.active:not(.disabled) {
+  &.uikit-active:enabled {
     background: transparent !important;
     color: $font_color_light !important;
 
@@ -30,7 +36,7 @@
     }
   }
 
-  &:not(.disabled):hover {
+  &:not(:enabled):hover {
     background-color: transparent;
   }
 }

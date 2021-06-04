@@ -31,13 +31,13 @@ button.uikit-button {
   border: none;
   margin: 0;
 
-  &.active:not([disabled]) {
+  &.uikit-active:enabled {
     background-color: #353535;
     border: none;
     color: #bbb;
   }
 
-  &[disabled] {
+  &:not(:enabled) {
     background: none;
     cursor: not-allowed;
   }
@@ -59,8 +59,8 @@ button.uikit-button-contained {
   @include uikit-button-contained-color($color_secondary);
 }
 
-.uikit-group > button.uikit-button:not(.disabled):not(:first-child):hover,
-.uikit-group button.uikit-button:not(.disabled):not(:last-child):hover ~ button.uikit-button {
+.uikit-group > button.uikit-button:enabled:not(:first-child):hover,
+.uikit-group button.uikit-button:enabled:not(:last-child):hover ~ button.uikit-button {
   border-left: solid 1px rgba(255, 0, 0, 0);
 }
 

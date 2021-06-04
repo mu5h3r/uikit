@@ -18,7 +18,7 @@ export default function Button(props: Props) {
 
   const classes = [`uikit-button-${variant || 'contained'}`, 'uikit-button'];
   if (className) classes.push(className);
-  if (active) classes.push('active');
+  if (active) classes.push('uikit-active');
 
   return <button title={title} disabled={disabled} type={type || 'submit'} className={classes.join(' ')} onClick={onClick}>{children}</button>;
 }
