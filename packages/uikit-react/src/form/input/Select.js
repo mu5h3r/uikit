@@ -50,7 +50,6 @@ const SelectInput = (props: Props) => {
   }
 
   const handleChange = (value, name) => {
-    console.log('__CHANGE__');
     let values = [];
 
     if (multiple) {
@@ -74,8 +73,6 @@ const SelectInput = (props: Props) => {
   };
 
   useEffect(() => {
-    console.log('FILTER', filter);
-
     if (filter !== undefined) {
       setTextValue(filter);
     } else {
