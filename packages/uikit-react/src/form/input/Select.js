@@ -105,9 +105,9 @@ const SelectInput = (props: Props) => {
         {
           options.filter(item => (
             (filter && item.name.toLowerCase().includes(filter)) || (!filter && true)
-          )).map(option => {
+          )).map((option, index) => {
             return <Option
-              key={option.value}
+              key={option.key || index}
               checkbox={multiple === true}
               checked={multiple === true && selectedValues.includes(option.value)}
               {...option}
