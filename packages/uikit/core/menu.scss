@@ -1,21 +1,15 @@
 @import './base';
 
-.uikit-menu__option {
-    pointer-events: all;
-}
-
 .uikit-menu {
     display: flex;
     z-index: 100;
 
-    max-height: 350px;
+    max-height: 250px;
     overflow-y: scroll;
 
     background-color: #ffffff;
     border: solid 1px #a0a0a0;
     border-radius: 4px;
-
-    pointer-events: none;
 
     transition: visibility 0s, opacity 200ms linear;
 
@@ -47,6 +41,7 @@
         border-radius: 0;
         height: 75vh;
         width: 100vw;
+        overflow-y: auto;
     }
 
     @media screen and (min-width: 900px) {
