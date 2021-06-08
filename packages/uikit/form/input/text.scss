@@ -124,6 +124,10 @@
   }
 }
 
+.uikit-group > .uikit-input-text.uikit-readonly.empty .uikit-label {
+  padding-left: 10px;
+}
+
 .uikit-input-text > .uikit-text-input__wrapper {
   display: flex;
   flex-grow: 1;

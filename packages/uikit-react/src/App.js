@@ -156,8 +156,8 @@ function App() {
       <h3>Text</h3>
       <TextInput value={button1value} onChange={setButton1Value}
                  help="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua" />
-      <TextInput readOnly={true} value="Read only text"
-                 help="Read only input" />
+      <TextInput label="Read only input" readOnly={true} help="Read only input" />
+      <TextInput label="Read only input with prefix" readOnly={true} prefix={<Icon>locked</Icon>} />
 
       <h3>Text With Error</h3>
       <Panel style={{maxWidth: '400px'}}>
