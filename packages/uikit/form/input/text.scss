@@ -36,7 +36,7 @@
 
   @include uikit-input-color(#a0a0a0, #ffffff);
 
-  & input[type=text], & input[type=password] {
+  & input[type=text], & input[type=password], & textarea {
     top: 0;
     right: 0;
     border: none;

@@ -30,12 +30,21 @@ const TextInput = (props: Props) => {
             { prefix ? <div className="uikit-input__prefix">{prefix}</div> : null }
             <div className="uikit-text-input__wrapper">
                 { label ? <Label>{label}</Label> : null }
-                <input type={type || 'text'}
-                    autoFocus={autoFocus || false}
-                    readOnly={readOnly}
-                    value={value || ''}
-                    onChange={(e) => onChange(e.currentTarget.value)}
-                    onBlur={onBlur} />
+                {
+                    type === 'textarea'
+                        ? <textarea
+                            autoFocus={autoFocus || false}
+                            readOnly={readOnly}
+                            value={value || ''}
+                            onChange={(e) => onChange(e.currentTarget.value)}
+                            onBlur={onBlur}>{value}</textarea>
+                        : <input type={type || 'text'}
+                                autoFocus={autoFocus || false}
+                                readOnly={readOnly}
+                                value={value || ''}
+                                onChange={(e) => onChange(e.currentTarget.value)}
+                                onBlur={onBlur} />
+                }
                 { props.children }
             </div>
             { suffix ? <div className="uikit-input__suffix">{suffix}</div> : null }

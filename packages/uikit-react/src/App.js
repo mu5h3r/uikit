@@ -172,9 +172,11 @@ function App() {
       <TextInput prefix={<Icon>face</Icon>} value={button2value} onChange={setButton2Value}/>
 
       <h3>Text with suffix</h3>
-      <Group>
-        <TextInput suffix="Suffix text" value={button2value} onChange={setButton2Value}/>
-      </Group>
+      <TextInput suffix="Suffix text" value={button2value} onChange={setButton2Value}/>
+
+
+      <h3>Text Area</h3>
+      <TextInput type="textarea" label="Text Area" value={button2value} onChange={setButton2Value} />
 
       <h3>Menu</h3>
       <Group>
